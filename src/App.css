@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hide scrollbar for the specific class */
+.example::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width   : none;
+  /* Firefox */
+}
+
+.Navbar_container {
+  position: sticky;
+  top     : 0;
+  border  : 1px solid red;
+}
