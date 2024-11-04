@@ -34,12 +34,12 @@ const Exclusive = () => {
     return (
         <div
             ref={ref}
-            className="relative flex flex-col h-auto gap-12 mt-3 lg:flex-row lg:justify-center"
+            className="flex flex-col items-center w-full h-auto gap-12 mt-3 overflow-hidden xl:overflow-visible lg:flex-row lg:justify-center"
         >
             {Exclusivedata.map((data, i) => (
                 <div
                     key={i}
-                    className={`transition-transform duration-1000 transform ${
+                    className={`transition-transform  duration-1000 transform ${
                         isVisible
                             ? "translate-x-0 opacity-100"
                             : "translate-x-36 opacity-0"

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import Logo from "@assets/logo.png";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import the cancel icon
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,12 +23,14 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 z-30 flex items-center justify-between w-full h-20 px-4 bg-white shadow-md lg:px-16 text-textcolor">
-            <div className="flex items-center">
-                <img src={Logo} alt="Logo" className="h-10" />
-                <h1 className="ml-2 text-xl font-bold text-headingcolor">
-                    VisionicX
-                </h1>
-            </div>
+            <Link to="/">
+                <div className="flex items-center">
+                    <img src={Logo} alt="Logo" className="h-10" />
+                    <h1 className="ml-2 text-xl font-bold text-headingcolor">
+                        VisionicX
+                    </h1>
+                </div>
+            </Link>
 
             {/* Desktop Menu */}
             <ul className="hidden space-x-10 font-semibold lg:space-x-20 md:flex">
@@ -50,8 +52,12 @@ const Navbar = () => {
 
             {/* Mobile Hamburger Icon */}
             <div className="md:hidden">
-                <button onClick={toggleMenu} className="focus:outline-none">
-                    <FaBars className="w-6 h-6 " />
+                <button onClick={toggleMenu} className=" focus:outline-non">
+                    {isOpen ? (
+                        <FaTimes className="w-6 h-6" />
+                    ) : (
+                        <FaBars className="w-6 h-6" />
+                    )}
                 </button>
             </div>
 
@@ -68,15 +74,15 @@ const Navbar = () => {
 const MobileMenu = ({ isOpen, navItems, location }) => {
     return (
         <ul
-            className={`${
-                isOpen ? "block" : "hidden"
-            } absolute top-20 right-0 w-3/4 bg-white  text-center py-10  z-10 font-semibold text-textcolor md:hidden space-y-6`}
+            className={`absolute top-20 right-0 w-3/4  bg-white flex flex-col gap-5 shadow-md text-center h-screen py-10 z-10 font-semibold text-textcolor md:hidden transition-transform duration-300 transform ${
+                isOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
             {navItems.map((item) => (
                 <li key={item.id}>
                     <Link
                         to={item.link}
-                        className={`hover:text-gray-600 ${
+                        className={`hover:text-gray-600  ${
                             location.pathname === item.link
                                 ? "border-b-2 border-textcolor"
                                 : ""

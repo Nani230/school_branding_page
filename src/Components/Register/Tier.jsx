@@ -35,28 +35,27 @@ const Tier = () => {
     return (
         <div
             ref={ref}
-            className="relative flex flex-col items-center w-full px-16 bg-center bg-cover"
+            className="relative flex flex-col items-center w-full px-4 overflow-hidden bg-center bg-cover sm:px-8 md:px-16"
+            style={{ backgroundImage: `url(${image1})` }}
         >
-            <pre className="absolute w-full h-full font-mono text-lg whitespace-pre-wrap top-16 -z-10">
+            <div className="absolute inset-0 z-0">
                 <img
                     src={image1}
-                    className="object-cover object-left w-full h-full max-w-full"
+                    className="object-cover w-full h-full opacity-50" // Adjust opacity for a subtle background
                     alt=""
                 />
-            </pre>
-            <div>
-                <h1 className="mt-5 mb-6 font-semibold text-center lg:text-2xl xl:text-3xl text-headingcolor">
-                    Features for Each Tier
-                </h1>
             </div>
+            <h1 className="z-10 mt-5 mb-6 text-lg font-semibold text-center sm:text-xl md:text-2xl lg:text-3xl text-headingcolor">
+                Features for Each Tier
+            </h1>
 
-            <div className="flex flex-wrap items-center justify-around w-full gap-5 mt-2 lg:gap-5 lg:flex-nowrap lg:justify-between lg:flex-row">
+            <div className="flex flex-wrap items-center justify-center w-full gap-5 mt-2 lg:flex-nowrap">
                 {TierData.map((data, i) => (
                     <div
                         key={i}
-                        className={`transition-transform relative duration-1000 transform ${
+                        className={`transition-transform  mb-5  w-72 sm:w-80  duration-1000 transform ${
                             isVisible
-                                ? "translate-y-0 opacity-100"
+                                ? "translate-x-0 opacity-100"
                                 : "-translate-x-96 opacity-0" // Start with a small translate
                         }`}
                     >

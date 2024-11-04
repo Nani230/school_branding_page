@@ -3,7 +3,7 @@ import { MdOutlineStars } from "react-icons/md";
 
 const TierCard = ({ data }) => {
     return (
-        <div className="mb-5  w-72 sm:w-80">
+        <>
             <div className="flex flex-col items-center justify-start p-3 pb-4 mb-3 bg-white rounded-lg shadow-custom h-36">
                 <h1 className="font-semibold text-center xl:text-lg text-headingcolor">
                     {data.Head}
@@ -41,7 +41,7 @@ const TierCard = ({ data }) => {
                     ))}
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
