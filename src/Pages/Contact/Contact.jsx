@@ -1,139 +1,160 @@
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import image from '../../assets/HomeBackground.png';
+import React, { useState } from "react";
 
-const Contact = () => {
-    // Define validation schema using Yup
-    const validationSchema = Yup.object().shape({
-        name: Yup.string().required('Name is required'),
-        email: Yup.string().email('Invalid email format').required('Email is required'),
-        phone: Yup.string()
-            .matches(/^[0-9]+$/, "Phone number is not valid")
-            .min(10, 'Phone number must be at least 10 digits')
-            .required('Phone number is required'),
-        organization: Yup.string().required('Organization is required'),
-        description: Yup.string().required('Description is required'),
+function FloatingLabelInput({
+    label,
+    type = "text",
+    name,
+    value,
+    onChange,
+    error,
+}) {
+    const [isFocused, setIsFocused] = useState(false);
+
+    const handleFocus = () => setIsFocused(true);
+    const handleBlur = () => setIsFocused(false);
+
+    return (
+        <div className="relative mt-4">
+            <label
+                className={`absolute left-3 top-3 text-textcolor font-sans font-normal text-sm transition-all duration-200 ${
+                    isFocused || value
+                        ? "top-2 indent-1 -translate-y-2  text-xs"
+                        : ""
+                }`}
+            >
+                {label}
+            </label>
+            <input
+                type={type}
+                name={name}
+                value={value}
+                onChange={onChange}
+                className={`w-full p-3 h-16 border text-textcolor font-sans font-normal border-[#172B85] rounded-md outline-none ${
+                    error ? "border-red-500" : "focus:outline-none"
+                }`}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+            />
+            <div
+                className={`absolute top-full left-0 text-sm text-red-500 mt-1 transition-opacity duration-300 ${
+                    error ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+                style={{ height: "1em" }}
+            >
+                {error}
+            </div>
+        </div>
+    );
+}
+
+const ContactForm = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        organization: "",
+        message: "",
     });
 
-    // Initial form values
-    const initialValues = {
-        name: '',
-        email: '',
-        phone: '',
-        organization: '',
-        description: '',
+    const [errors, setErrors] = useState({});
+
+    const fields = [
+        { label: "What is your name? *", name: "name" },
+        { label: "What is your email? *", name: "email", type: "email" },
+        { label: "What is your phone number?", name: "phone", type: "tel" },
+        { label: "What is your Organization?", name: "organization" },
+    ];
+
+    const validateForm = () => {
+        const newErrors = {};
+        if (!formData.name.trim()) newErrors.name = "Name is required.";
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required.";
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = "Invalid email format.";
+        }
+        // Additional validation logic as needed
+        return newErrors;
     };
 
-    // Handle form submission
-    const onSubmit = (values) => {
-        console.log('Form data:', values);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        if (errors[name]) {
+            setErrors({ ...errors, [name]: "" }); // Clear error when input changes
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formErrors = validateForm();
+        if (Object.keys(formErrors).length === 0) {
+            console.log("User input data:", formData);
+            // Handle successful form submission
+        } else {
+            setErrors(formErrors);
+        }
     };
 
     return (
-        <div
-            className="h-full bg-cover bg-center flex flex-col border-2 sm:px-3"
-            style={{ backgroundImage: `url(${image})` }}
-        >
-            <div className="lg:p-10 md:p-3 sm:p-1 bg-white bg-opacity-75 rounded-lg shadow-lg lg:w-2/3 md:w-2/3 sm:w-full mx-auto md:mt-20 sm:mt-10 mb-10">
-                <h1 className="lg:text-3xl md:text-xl sm:text-lg font-bold mb-8 text-center text-headingcolor ">Say Hello to Us</h1>
-
-                {/* Formik Form */}
-                <Formik
-                    initialValues={initialValues}
-                    validationSchema={validationSchema}
-                    onSubmit={onSubmit}
-                >
-                    {({ isSubmitting }) => (
-                        <Form className='flex flex-col items-start justify-center w-full lg:gap-9 sm:gap-3'>
-                            <div className='lg:flex lg:justify-between lg:items-center lg:flex-row sm:flex sm:flex-col lg:gap-10 sm:gap-3 w-full'>
-                                <div className="mb-4 w-full">
-                                    <Field
-                                        type="text"
-                                        name="name"
-                                        placeholder="What is your name? *"
-                                        className="border-2 border-textcolor lg:p-2 md:p-1 sm:p-1 sm:px-2 w-full placeholder-textcolor rounded-md sm:text-sm"
-                                    />
-                                    <ErrorMessage
-                                        name="name"
-                                        component="div"
-                                        className="text-red-500 text-sm mt-1"
-                                    />
-                                </div>
-
-                                <div className="mb-4 w-full">
-                                    <Field
-                                        type="email"
-                                        name="email"
-                                        placeholder="What it your email? *"
-                                        className="border-2 border-textcolor lg:p-2 md:p-1 sm:p-1 sm:px-2 w-full placeholder-textcolor rounded-md sm:text-sm"
-                                    />
-                                    <ErrorMessage
-                                        name="email"
-                                        component="div"
-                                        className="text-red-500 text-sm mt-1"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className='lg:flex lg:justify-between lg:items-center lg:flex-row sm:flex sm:flex-col lg:gap-10 sm:gap-3 w-full'>
-                                <div className="mb-4 w-full">
-                                    <Field
-                                        type="text"
-                                        name="phone"
-                                        placeholder="What is your phone number?"
-                                        className="border-2 border-textcolor lg:p-2 md:p-1 sm:p-1 sm:px-2 w-full placeholder-textcolor rounded-md sm:text-sm"
-                                    />
-                                    <ErrorMessage
-                                        name="phone"
-                                        component="div"
-                                        className="text-red-500 text-sm mt-1"
-                                    />
-                                </div>
-
-                                <div className="mb-4 w-full">
-                                    <Field
-                                        type="text"
-                                        name="organization"
-                                        placeholder="What is your Organization?"
-                                        className="border-2 border-textcolor lg:p-2 md:p-1 sm:p-1 sm:px-2 w-full placeholder-textcolor rounded-md sm:text-sm"
-                                    />
-                                    <ErrorMessage
-                                        name="organization"
-                                        component="div"
-                                        className="text-red-500 text-sm mt-1"
-                                    />
-                                </div>
-                            </div>
-                            <div className="mb-4 w-full">
-                                <Field
-                                    as="textarea"
-                                    name="description"
-                                    placeholder="Write your message here"
-                                    className="border-2 border-textcolor p-2 w-full h-36 placeholder-textcolor rounded-md"
-
-                                />
-                                <ErrorMessage
-                                    name="description"
-                                    component="div"
-                                    className="text-red-500 text-sm mt-1"
-                                />
-                            </div>
-                            <div className='flex justify-end items-end w-full'>
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="bg-headingcolor text-white py-2 px-4 rounded hover:bg-blue-600 "
-                                >
-                                    {isSubmitting ? 'Submitting...' : 'Send Message'}
-                                </button>
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
+        <div className="max-w-6xl p-8 mx-auto mt-32 mb-20 bg-white rounded-lg shadow-lg">
+            <div className="flex justify-between mb-6">
+                <h2 className="flex-1 text-4xl font-bold text-center text-blue-800">
+                    Say Hello to Us
+                </h2>
             </div>
+            <form className="space-y-6" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 gap-4 gap-x-10 md:grid-cols-2">
+                    {fields.map(({ label, name, type = "text" }) => (
+                        <FloatingLabelInput
+                            key={name}
+                            label={label}
+                            name={name}
+                            type={type}
+                            value={formData[name]}
+                            onChange={handleChange}
+                            error={errors[name]}
+                        />
+                    ))}
+                </div>
+                <div className="mt-4">
+                    <textarea
+                        name="message"
+                        placeholder="Write your message here"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full h-32 p-3 border rounded-md outline-none text-textcolor font-sans font-normal border-[#172B85] focus:outline-none"
+                    />
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center w-full gap-3 space-x-2 sm:justify-between">
+                    <div className="flex items-center gap-5 ">
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            className="w-4 h-4 text-blue-600 border-gray-300 rounded"
+                            required
+                        />
+                        <label
+                            htmlFor="terms"
+                            className="flex flex-col text-sm font-normal sm:text-lg"
+                        >
+                            I have read and accept the Terms of{" "}
+                            <span className="text-headingcolor">
+                                Service & Privacy Policy *
+                            </span>
+                        </label>
+                    </div>
+                    <button
+                        type="submit"
+                        className="px-6 py-2 font-sans font-normal text-white transition duration-300 rounded-full bg-headingcolor"
+                    >
+                        SEND MESSAGE
+                    </button>
+                </div>
+            </form>
         </div>
     );
 };
 
-export default Contact;
+export default ContactForm;

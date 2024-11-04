@@ -1,4 +1,65 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .active-dot::after {
+        content: "•";
+        position: absolute;
+        left: 50%; /* Center it horizontally */
+        transform: translateX(-50%); /* Center adjustment */
+        font-size: 25px;
+        margin-top: 20px;
+    }
+    .layer-btn {
+        position: relative;
+        width: 270px;
+    }
+
+    .layer-btn::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 405%;
+        transform: translateX(75%) translateY(40%) rotate(55deg);
+        transition: 0.4s;
+        z-index: 100px;
+    }
+
+    .layer-btn:hover::before {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+.responsive-section {
+    width: 100%; /* Default width */
+    max-width: 1520px; /* Maximum width */
+    margin: 0 auto; /* Center horizontally */
+}
+
+@media (max-width: 1200px) {
+    .responsive-section {
+        max-width: 1200px; /* For smaller screens */
+    }
+}
+
+@media (max-width: 960px) {
+    .responsive-section {
+        max-width: 960px; /* For medium screens */
+    }
+}
+
+@media (max-width: 800px) {
+    .responsive-section {
+        max-width: 800px; /* For large screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .responsive-section {
+        max-width: 600px; /* For extra-large screens */
+    }
+}
