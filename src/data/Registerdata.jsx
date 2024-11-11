@@ -20,7 +20,6 @@ const Exclusivedata = [
             "Zero Commitment Risk",
         ],
         button: "Register Now",
-        plan: ["silver", "Gold", "Platinum", "Premium"],
     },
     {
         title: "Regular",
@@ -39,8 +38,6 @@ const Exclusivedata = [
             "Manual updates",
         ],
         button: "Choose plan",
-
-        plan: ["silver", "Gold", "Platinum", "Premium"],
     },
 ];
 

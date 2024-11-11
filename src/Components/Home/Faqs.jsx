@@ -1,37 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+// Faqs.js
+import React from "react";
 import FaqsCard from "../ui/Home/FaqsCard";
 import Faqsdata from "@/data/Faqsdata";
 import image from "@assets/FaqsBackground.png";
+import AnimatedSection from "@animation/AnimatedSection";
 
 const Faqs = () => {
-    const [visibleCards, setVisibleCards] = useState([]);
-    const cardRefs = useRef([]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = entry.target.getAttribute("data-index");
-                        setVisibleCards((prev) => [...prev, index]);
-                        observer.unobserve(entry.target); // Stop observing after it becomes visible
-                    }
-                });
-            },
-            { threshold: 0.1 } // Trigger when 10% of the component is visible
-        );
-
-        cardRefs.current.forEach((card) => {
-            if (card) observer.observe(card);
-        });
-
-        return () => {
-            cardRefs.current.forEach((card) => {
-                if (card) observer.unobserve(card);
-            });
-        };
-    }, []);
-
     return (
         <div className="relative flex justify-center p-5 mt-48 bg-no-repeat bg-contain responsive-section h-max pt-9">
             <pre className="absolute top-0 font-mono text-lg whitespace-pre-wrap -z-10">
@@ -48,21 +22,9 @@ const Faqs = () => {
                 </div>
                 <div className="flex flex-col items-start justify-center w-full h-auto mb-3">
                     {Faqsdata.map((data, i) => (
-                        <div
-                            key={i}
-                            ref={(el) => (cardRefs.current[i] = el)}
-                            data-index={i}
-                            className={`transition-transform duration-500 transform ${
-                                visibleCards.includes(i.toString())
-                                    ? "opacity-100 scale-100"
-                                    : "opacity-0 scale-95"
-                            }`}
-                            style={{
-                                transitionDelay: `${i * 50}ms`, // Stagger effect
-                            }}
-                        >
+                        <AnimatedSection key={i} index={i}>
                             <FaqsCard data={data} i={i} />
-                        </div>
+                        </AnimatedSection>
                     ))}
                 </div>
             </div>

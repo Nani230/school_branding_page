@@ -1,51 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+// Features.js
+import React from "react";
 import image1 from "@assets/featurebackground.png";
 import m_banner from "@assets/Home/m_features.png";
 import data from "@/data/Featuresinfo";
 import FeatureCard from "../ui/Home/FeatureCard";
 import ClientCard from "../ui/Home/ClientCard";
+import AnimatedSection from "@animation/AnimatedSection";
 
 const Features = () => {
     const { Clientdata, campusdata, Performancedata, Aidrivendata } = data;
-    const [visibleClientCards, setVisibleClientCards] = useState([]);
-    const [visibleFeatureCards, setVisibleFeatureCards] = useState([]);
-    const clientCardRefs = useRef([]);
-    const featureCardRefs = useRef([]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = entry.target.getAttribute("data-index");
-                        if (entry.target.dataset.type === "client") {
-                            setVisibleClientCards((prev) => [...prev, index]);
-                        } else {
-                            setVisibleFeatureCards((prev) => [...prev, index]);
-                        }
-                        observer.unobserve(entry.target); // Stop observing after it becomes visible
-                    }
-                });
-            },
-            { threshold: 0.1 } // Trigger when 10% of the component is visible
-        );
-
-        clientCardRefs.current.forEach((card) => {
-            if (card) observer.observe(card);
-        });
-        featureCardRefs.current.forEach((card) => {
-            if (card) observer.observe(card);
-        });
-
-        return () => {
-            clientCardRefs.current.forEach((card) => {
-                if (card) observer.unobserve(card);
-            });
-            featureCardRefs.current.forEach((card) => {
-                if (card) observer.unobserve(card);
-            });
-        };
-    }, []);
 
     return (
         <div className="relative flex flex-col items-center justify-center h-full p-3 pb-10 responsive-section">
@@ -68,22 +31,17 @@ const Features = () => {
                 </h1>
                 <div className="flex flex-wrap justify-between w-full gap-10 mt-20 lg:gap-28 md:px-20">
                     {Clientdata.map((data, i) => (
-                        <div
+                        <AnimatedSection
                             key={i}
-                            ref={(el) => (clientCardRefs.current[i] = el)}
-                            data-index={i}
-                            data-type="client"
-                            className={`transition-opacity duration-500 transform ${
-                                visibleClientCards.includes(i.toString())
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-5"
-                            }`}
+                            dataIndex={i}
+                            dataType="client"
                         >
                             <ClientCard data={data} />
-                        </div>
+                        </AnimatedSection>
                     ))}
                 </div>
             </div>
+
             <div className="flex flex-col items-center justify-center p-4 pt-48 ">
                 <h1 className="text-4xl font-bold tracking-wider text-headingcolor ">
                     Feature
@@ -97,83 +55,50 @@ const Features = () => {
                 </h1>
                 <div className="flex flex-wrap justify-around gap-10 md:px-20">
                     {campusdata.map((data, i) => (
-                        <div
+                        <AnimatedSection
                             key={i}
-                            ref={(el) => (featureCardRefs.current[i] = el)}
-                            data-index={i}
-                            data-type="feature"
-                            className={`transition-opacity duration-500 transform ${
-                                visibleFeatureCards.includes(i.toString())
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-5"
-                            }`}
+                            dataIndex={i}
+                            dataType="feature"
+                            animationType="fade"
                         >
                             <FeatureCard data={data} />
-                        </div>
+                        </AnimatedSection>
                     ))}
                 </div>
             </div>
+
             <div className="flex flex-col items-center justify-center pt-20 mb-3">
                 <h1 className="py-6 pb-8 font-bold tracking-wider text-center text-headingcolor lg:text-2xl md:text-2xl sm:text-lg ">
                     Performance & Personal Management
                 </h1>
                 <div className="flex flex-wrap justify-around gap-10 md:px-20">
                     {Performancedata.map((data, i) => (
-                        <div
+                        <AnimatedSection
                             key={i}
-                            ref={(el) =>
-                                (featureCardRefs.current[
-                                    i + campusdata.length
-                                ] = el)
-                            }
-                            data-index={i + campusdata.length}
-                            data-type="feature"
-                            className={`transition-opacity duration-500 transform ${
-                                visibleFeatureCards.includes(
-                                    (i + campusdata.length).toString()
-                                )
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-5"
-                            }`}
+                            dataIndex={i}
+                            dataType="feature"
+                            animationType="fade"
                         >
                             <FeatureCard data={data} />
-                        </div>
+                        </AnimatedSection>
                     ))}
                 </div>
             </div>
+
             <div className="flex flex-col items-center justify-center pt-20 mb-3">
                 <h1 className="py-6 pb-8 font-bold tracking-wider text-center text-headingcolor lg:text-2xl md:text-2xl sm:text-lg">
                     Advanced & AI-Driven
                 </h1>
                 <div className="flex flex-wrap justify-around gap-10 md:px-20">
                     {Aidrivendata.map((data, i) => (
-                        <div
+                        <AnimatedSection
                             key={i}
-                            ref={(el) =>
-                                (featureCardRefs.current[
-                                    i +
-                                        campusdata.length +
-                                        Performancedata.length
-                                ] = el)
-                            }
-                            data-index={
-                                i + campusdata.length + Performancedata.length
-                            }
-                            data-type="feature"
-                            className={`transition-opacity duration-500 transform ${
-                                visibleFeatureCards.includes(
-                                    (
-                                        i +
-                                        campusdata.length +
-                                        Performancedata.length
-                                    ).toString()
-                                )
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-5"
-                            }`}
+                            dataIndex={i}
+                            dataType="feature"
+                            animationType="fade"
                         >
                             <FeatureCard data={data} />
-                        </div>
+                        </AnimatedSection>
                     ))}
                 </div>
             </div>

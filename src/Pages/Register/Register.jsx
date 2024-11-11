@@ -9,7 +9,7 @@ import Tier from "@/Components/Register/Tier";
 const Register = () => {
     return (
         <div className=" responsive-section">
-            <div className="relative flex flex-col items-center w-full h-auto pb-20 bg-center bg-cover responsive-section">
+            <div className="relative flex flex-col items-center w-full h-auto pb-10 bg-center bg-cover responsive-section">
                 <pre className="absolute w-full h-full font-mono text-lg whitespace-pre-wrap -top-4 lg:-top-5 xl:-top-0 -z-10">
                     <img
                         src={image}
@@ -30,7 +30,7 @@ const Register = () => {
                 <Exclusive />
             </div>
 
-            <div className="flex flex-col gap-2 mb-5 lg:pt-20">
+            <div className="flex flex-col gap-2 mb-5 ">
                 <h1 className="font-semibold text-center md:text-xl lg:text-2xl xl:text-3xl text-headingcolor">
                     Let our team handle the entire setup, ensuring zero hassle
                     for you.

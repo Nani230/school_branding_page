@@ -82,12 +82,6 @@ const Slideshow = () => {
                             {data[currentIndex].para}
                         </p>
                         <div className="flex justify-center w-full my-10 lg:my-0 lg:mt-10">
-                            {/* <button className="relative font-mono font-bold text-base text-white py-2 px-4 bg-[#4F5EA2] rounded-lg overflow-hidden group">
-                                <span className="relative z-10">
-                                    Get Personalized Demo
-                                </span>
-                                <span className="absolute top-2 -right-24 w-full h-full bg-blue-900 transform translate-x-2 translate-y-2 -rotate-[24deg]"></span>
-                            </button> */}
                             <Link
                                 to="/Register"
                                 className="flex justify-center py-2 overflow-hidden font-mono text-base font-bold rounded-lg hover:text-white text-white before:bg-[#172B85] bg-textcolor group layer-btn"

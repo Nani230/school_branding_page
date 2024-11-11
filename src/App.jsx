@@ -1,16 +1,28 @@
-// src/App.jsx
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    useLocation,
+} from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
-import "./App.css";
-
 import Navbar from "./Components/ui/Navbar/Navbar";
 import Contact from "./Pages/Contact/Contact";
 import Register from "./Pages/Register/Register";
 import Features from "./Pages/features/Features";
+
+function ScrollToTop() {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to top on route change
+    }, [location]); // Trigger whenever the route changes
+
+    return null;
+}
+
 function App() {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -35,8 +47,10 @@ function App() {
             window.removeEventListener("scroll", toggleVisibility);
         };
     }, []);
+
     return (
         <Router>
+            <ScrollToTop />
             <div className="App">
                 <Navbar />
                 <div

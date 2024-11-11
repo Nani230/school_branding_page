@@ -6,7 +6,7 @@ const Exclusive = () => {
     const { Exclusivedata } = data;
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef(null);
-
+    let plan = ["silver", "Gold", "Platinum", "Premium", "Customize"];
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -34,18 +34,28 @@ const Exclusive = () => {
     return (
         <div
             ref={ref}
-            className="flex flex-col items-center w-full h-auto gap-12 mt-3 overflow-hidden xl:overflow-visible lg:flex-row lg:justify-center"
+            className="flex flex-col items-center w-full h-auto px-10 mt-3 overflow-hidden lg:gap-7 xl:gap-12 xl:overflow-visible lg:flex-row lg:justify-center"
         >
             {Exclusivedata.map((data, i) => (
                 <div
                     key={i}
-                    className={`transition-transform  duration-1000 transform ${
+                    className={`transition-transform flex flex-col w-[550px] mb-5  items-center duration-1000 transform ${
                         isVisible
                             ? "translate-x-0 opacity-100"
                             : "translate-x-36 opacity-0"
                     }`}
                 >
                     <ExclusiveCard data={data} />
+                    <div className="flex justify-between gap-1 my-3 lg:w-full am:px-6">
+                        {plan.map((planItem, i) => (
+                            <button
+                                key={i}
+                                className="w-16 py-1 text-xs font-semibold border-2 sm:text-sm sm:w-24 rounded-2xl border-textcolor text-headingcolor hover:bg-headingcolor hover:text-white"
+                            >
+                                {planItem}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             ))}
         </div>
