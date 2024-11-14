@@ -64,7 +64,7 @@ const Footer = () => {
                             (info, idx) => (
                                 <li
                                     key={idx}
-                                    className="font-sans text-base font-normal list-none "
+                                    className="font-sans text-base font-normal list-none cursor-pointer "
                                 >
                                     {info}
                                 </li>
@@ -77,7 +77,7 @@ const Footer = () => {
                     {socialIcons.map(({ icon, key }) => (
                         <li
                             key={key}
-                            className="flex items-center justify-center p-2 text-white rounded-full bg-textcolor"
+                            className="flex items-center justify-center p-2 text-white rounded-full cursor-pointer bg-textcolor"
                         >
                             {icon}
                         </li>

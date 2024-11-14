@@ -171,7 +171,7 @@ const ContactForm = () => {
                             placeholder="Write your message here"
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full h-32 p-3 border rounded-md outline-none text-textcolor font-sans font-normal border-[#172B85] focus:outline-none"
+                            className="w-full h-32 p-3 border rounded-md outline-none text-textcolor placeholder:text-textcolor font-sans font-normal border-[#172B85] focus:outline-none"
                         />
                     </div>
 

@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    useLocation,
-} from "react-router-dom";
+// App.js
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import { FaArrowUp } from "react-icons/fa";
-import Home from "./Pages/Home/Home";
-import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/ui/Navbar/Navbar";
-import Contact from "./Pages/Contact/Contact";
-import Register from "./Pages/Register/Register";
-import Features from "./Pages/features/Features";
+import Footer from "./Components/Footer/Footer";
+import RoutesConfig from "./routes/Routes"; // Import the RoutesConfig component
 
 function ScrollToTop() {
     const location = useLocation();
@@ -53,6 +46,7 @@ function App() {
             <ScrollToTop />
             <div className="App">
                 <Navbar />
+
                 <div
                     className={`fixed bottom-4 right-4 z-40 transition-opacity duration-300 ${
                         isVisible ? "opacity-100" : "opacity-0"
@@ -67,12 +61,7 @@ function App() {
                     </button>
                 </div>
                 <div className="mt-20">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/Contact" element={<Contact />} />
-                        <Route path="/Register" element={<Register />} />
-                        <Route path="/Features" element={<Features />} />
-                    </Routes>
+                    <RoutesConfig />
                 </div>
                 <Footer />
             </div>

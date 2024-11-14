@@ -54,7 +54,7 @@ const Slideshow = () => {
     };
 
     return (
-        <>
+        <section id="/">
             <div className="relative responsive-section flex flex-col w-full h-[650px] lg:h-[750px] lg:justify-center lg:items-center">
                 <pre className="absolute w-full h-full font-mono text-lg whitespace-pre-wrap -top-4 lg:-top-5 xl:-top-0 -z-10">
                     <img
@@ -116,7 +116,7 @@ const Slideshow = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     );
 };
 

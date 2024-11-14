@@ -17,8 +17,8 @@ export default defineConfig({
             "@pages": "/src/pages",
             "@animation": "/src/animation",
             "@assets": "/src/assets",
-            "@": "/src",
             "@data": "/src/data",
+            "@": "/src", // Add this alias if you want to use '@' as the base path for src
         },
     },
 });
