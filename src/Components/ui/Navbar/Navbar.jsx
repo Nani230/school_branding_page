@@ -36,6 +36,7 @@ const Navbar = () => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         inViewSection = entry.target.id;
+                        console.log(inViewSection);
                     }
                 });
 
@@ -58,13 +59,7 @@ const Navbar = () => {
                 observerRef.current.disconnect();
             }
         };
-    }, [
-        [],
-        isObserverDisabled,
-        location.pathname,
-        clickedSection,
-        activeSection,
-    ]); // Ensure the observer is reinitialized on path change
+    }, [[], isObserverDisabled]); // Ensure the observer is reinitialized on path change
 
     useEffect(() => {
         if (location.pathname === "/") {
@@ -75,7 +70,7 @@ const Navbar = () => {
     }, [location.pathname]);
 
     const handleScroll = (sectionId) => {
-        // setClickedSection(sectionId);
+        setClickedSection(sectionId);
         setActiveSection(sectionId);
         if (location.pathname === "/") {
             const section = document.getElementById(sectionId);
@@ -90,6 +85,8 @@ const Navbar = () => {
             }
         } else {
             navigate("/"); // Navigate to the homepage first
+            observeForSection(sectionId);
+
             setIsObserverDisabled(true);
 
             setTimeout(() => {
@@ -107,14 +104,29 @@ const Navbar = () => {
             }, 100);
         }
     };
+    const observeForSection = (sectionId) => {
+        const observer = new MutationObserver((mutations) => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                setIsObserverDisabled(true);
 
+                section.scrollIntoView({ behavior: "smooth" });
+                setActiveSection(sectionId);
+                setTimeout(() => {
+                    setIsObserverDisabled(false);
+                    setClickedSection("");
+                }, 800); // Adjust time as needed
+                observer.disconnect(); // Stop observing after scroll is complete
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    };
     const getActiveDot = () => {
         if (location.pathname !== "/") {
             return "";
         }
-        return (
-            clickedSection || activeSection || (activeSection && clickedSection)
-        );
+        return clickedSection || activeSection;
     };
 
     return (
