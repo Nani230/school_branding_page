@@ -2,44 +2,64 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "@assets/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import Dropdown from "./Dropdown";
+import MobileMenu from "./MobileMenu";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState("Home"); // Default to "Home"
+    const [isProductsOpen, setIsProductsOpen] = useState(false); // For products dropdown
+    const [activeSection, setActiveSection] = useState("Home");
     const [clickedSection, setClickedSection] = useState("");
     const [isObserverDisabled, setIsObserverDisabled] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
     const observerRef = useRef(null);
+    const dropdownRef = useRef(null);
 
     const navItems = [
         { id: 1, title: "Home", link: "/", scroll: true },
         { id: 2, title: "Features", link: "features", scroll: true },
-        { id: 3, title: "Products", link: "products", scroll: true },
+        { id: 3, title: "Products", link: "products", scroll: false },
         { id: 4, title: "FAQ", link: "faq", scroll: true },
         { id: 5, title: "Contact", link: "/contact" },
     ];
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
+    const toggleMenu = () => setIsOpen(!isOpen);
+
+    // Use onMouseEnter and onMouseLeave to open and close the dropdown on hover
+    const handleMouseEnterProducts = () => setIsProductsOpen(true);
+    const handleMouseLeaveProducts = () => setIsProductsOpen(false);
+
+    const handleClickOutside = (event) => {
+        if (
+            dropdownRef.current &&
+            !dropdownRef.current.contains(event.target)
+        ) {
+            setIsProductsOpen(false);
+        }
     };
 
     useEffect(() => {
-        // Initialize the observer
-        const sections = document.querySelectorAll("section");
+        if (isProductsOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isProductsOpen]);
 
+    useEffect(() => {
+        const sections = document.querySelectorAll("section");
         observerRef.current = new IntersectionObserver(
             (entries) => {
-                if (isObserverDisabled) return;
-
+                if (isObserverDisabled || isProductsOpen) return;
                 let inViewSection = "";
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         inViewSection = entry.target.id;
-                        console.log(inViewSection);
                     }
                 });
-
                 if (inViewSection && activeSection !== inViewSection) {
                     setActiveSection(inViewSection);
                 }
@@ -50,52 +70,47 @@ const Navbar = () => {
                 threshold: 0.6,
             }
         );
+        sections.forEach((section) => {
+            observerRef.current.observe(section);
+        });
 
-        sections.forEach((section) => observerRef.current.observe(section));
-
-        // Cleanup the observer on unmount
         return () => {
-            if (observerRef.current) {
-                observerRef.current.disconnect();
-            }
+            if (observerRef.current) observerRef.current.disconnect();
         };
-    }, [[], isObserverDisabled]); // Ensure the observer is reinitialized on path change
+    }, [[], isObserverDisabled, isProductsOpen]);
 
     useEffect(() => {
         if (location.pathname === "/") {
-            setActiveSection("/"); // Set to "Home" on initial page load
+            setActiveSection("/"); // Home route
         } else {
-            setActiveSection(""); // Empty or default value for other paths
+            setActiveSection("");
         }
     }, [location.pathname]);
 
     const handleScroll = (sectionId) => {
         setClickedSection(sectionId);
         setActiveSection(sectionId);
+
         if (location.pathname === "/") {
             const section = document.getElementById(sectionId);
             if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
                 setIsObserverDisabled(true);
-
                 setTimeout(() => {
                     setIsObserverDisabled(false);
                     setClickedSection("");
-                }, 800); // Adjust time as needed
+                }, 800);
             }
         } else {
-            navigate("/"); // Navigate to the homepage first
+            navigate("/"); // Navigate to home
             observeForSection(sectionId);
-
             setIsObserverDisabled(true);
-
             setTimeout(() => {
                 const section = document.getElementById(sectionId);
                 if (section) {
                     section.scrollIntoView({ behavior: "smooth" });
                     setActiveSection(sectionId);
                     setClickedSection(sectionId);
-
                     setTimeout(() => {
                         setIsObserverDisabled(false);
                         setClickedSection("");
@@ -104,30 +119,34 @@ const Navbar = () => {
             }, 100);
         }
     };
+
     const observeForSection = (sectionId) => {
         const observer = new MutationObserver((mutations) => {
             const section = document.getElementById(sectionId);
             if (section) {
                 setIsObserverDisabled(true);
-
                 section.scrollIntoView({ behavior: "smooth" });
                 setActiveSection(sectionId);
                 setTimeout(() => {
                     setIsObserverDisabled(false);
                     setClickedSection("");
-                }, 800); // Adjust time as needed
-                observer.disconnect(); // Stop observing after scroll is complete
+                }, 800);
+                observer.disconnect();
             }
         });
-
         observer.observe(document.body, { childList: true, subtree: true });
     };
+
     const getActiveDot = () => {
-        if (location.pathname !== "/") {
-            return "";
-        }
+        if (isProductsOpen) return ""; // No other dots highlighted if products dropdown is open
+        if (location.pathname !== "/") return "";
         return clickedSection || activeSection;
     };
+
+    function locationpath() {
+        if (isProductsOpen) return "";
+        return location.pathname;
+    }
 
     return (
         <nav className="fixed top-0 z-30 flex items-center justify-between w-full h-20 px-4 bg-white shadow-md lg:px-16 text-textcolor">
@@ -143,7 +162,25 @@ const Navbar = () => {
             <ul className="hidden space-x-10 font-semibold lg:space-x-20 md:flex">
                 {navItems.map((item) => (
                     <li key={item.id}>
-                        {item.scroll ? (
+                        {item.title === "Products" ? (
+                            <span
+                                onMouseEnter={handleMouseEnterProducts}
+                                onMouseLeave={handleMouseLeaveProducts}
+                                className={`relative cursor-pointer ${
+                                    isProductsOpen
+                                        ? "active-dot text-headingcolor"
+                                        : ""
+                                }`}
+                            >
+                                {item.title}
+                                {isProductsOpen && (
+                                    <Dropdown
+                                        ref={dropdownRef}
+                                        isProductsOpen={isProductsOpen}
+                                    />
+                                )}
+                            </span>
+                        ) : item.scroll ? (
                             <span
                                 onClick={() => handleScroll(item.link)}
                                 className={`relative cursor-pointer ${
@@ -158,7 +195,7 @@ const Navbar = () => {
                             <Link
                                 to={item.link}
                                 className={`relative ${
-                                    location.pathname === item.link
+                                    locationpath() === item.link
                                         ? "active-dot text-headingcolor"
                                         : ""
                                 }`}
@@ -185,46 +222,11 @@ const Navbar = () => {
                 navItems={navItems}
                 handleScroll={handleScroll}
                 activeSection={getActiveDot()}
+                locationpath={locationpath()}
+                isProductsOpen={isProductsOpen}
+                setIsProductsOpen={setIsProductsOpen}
             />
         </nav>
-    );
-};
-
-const MobileMenu = ({ isOpen, navItems, handleScroll, activeSection }) => {
-    return (
-        <ul
-            className={`absolute top-20 right-0 w-3/4 bg-white flex flex-col gap-5 shadow-md text-center h-screen py-10 z-10 font-semibold text-textcolor md:hidden transition-transform duration-300 transform ${
-                isOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-        >
-            {navItems.map((item) => (
-                <li key={item.id}>
-                    {item.scroll ? (
-                        <span
-                            onClick={() => handleScroll(item.link)}
-                            className={`cursor-pointer ${
-                                activeSection === item.link
-                                    ? "border-b-2 border-textcolor"
-                                    : ""
-                            }`}
-                        >
-                            {item.title}
-                        </span>
-                    ) : (
-                        <Link
-                            to={item.link}
-                            className={`hover:text-gray-600 ${
-                                location.pathname === item.link
-                                    ? "border-b-2 border-textcolor"
-                                    : ""
-                            }`}
-                        >
-                            {item.title}
-                        </Link>
-                    )}
-                </li>
-            ))}
-        </ul>
     );
 };
 

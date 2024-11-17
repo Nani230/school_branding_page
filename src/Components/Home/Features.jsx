@@ -53,7 +53,10 @@ const Features = () => {
                 <p className="bg-custom-gradient p-2 rounded-full w-20 mt-0.5"></p>
             </section>
 
-            <div className="flex flex-col items-center justify-center mb-3">
+            <section
+                id="features"
+                className="flex flex-col items-center justify-center mb-3"
+            >
                 <h1 className="py-6 pb-8 font-bold tracking-wider text-center text-headingcolor lg:text-2xl md:text-2xl sm:text-lg ">
                     Core Campus Management
                 </h1>
@@ -71,10 +74,10 @@ const Features = () => {
                         </AnimatedSection>
                     ))}
                 </div>
-            </div>
+            </section>
 
             <section
-                id="products"
+                id="features"
                 className="flex flex-col items-center justify-center pt-20 mb-3"
             >
                 <h1 className="py-6 pb-8 font-sans font-bold tracking-wider text-center text-headingcolor lg:text-3xl md:text-2xl sm:text-lg ">
@@ -94,7 +97,10 @@ const Features = () => {
                 </div>
             </section>
 
-            <div className="flex flex-col items-center justify-center pt-20 mb-3">
+            <section
+                id="features"
+                className="flex flex-col items-center justify-center pt-20 mb-3"
+            >
                 <h1 className="py-6 pb-8 font-sans font-bold tracking-wider text-center text-headingcolor lg:text-3xl md:text-2xl sm:text-lg">
                     Advanced & AI-Driven
                 </h1>
@@ -110,7 +116,7 @@ const Features = () => {
                         </AnimatedSection>
                     ))}
                 </div>
-            </div>
+            </section>
         </div>
     );
 };
