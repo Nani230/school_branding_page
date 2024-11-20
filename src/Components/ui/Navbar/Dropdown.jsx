@@ -4,6 +4,7 @@ import React from "react";
 import scanner from "@assets/product/Scanner.png";
 import singlephase from "@assets/product/singlephase.png";
 import threephase from "@assets/product/threephase.png";
+import { Link } from "react-router-dom";
 
 const Dropdown = React.forwardRef((props, ref) => {
     const products = [
@@ -31,9 +32,10 @@ const Dropdown = React.forwardRef((props, ref) => {
         >
             <div className="flex flex-col items-center gap-4">
                 {products.map((product) => (
-                    <div
+                    <Link
                         key={product.id}
                         className="flex items-center w-full gap-8 p-4 text-center bg-[#D0D6ED] rounded-lg shadow-sm transition-transform duration-300 transform hover:scale-105 hover:shadow-lg"
+                        to={`/product/${product.id}`}
                     >
                         <img
                             className="transition-opacity duration-300 w-28 h-28 hover:opacity-90"
@@ -43,7 +45,7 @@ const Dropdown = React.forwardRef((props, ref) => {
                         <p className="font-sans text-base font-semibold">
                             {product.description}
                         </p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

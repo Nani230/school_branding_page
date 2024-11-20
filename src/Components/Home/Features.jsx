@@ -9,9 +9,8 @@ import AnimatedSection from "@animation/AnimatedSection";
 import { Link } from "react-router-dom";
 const Features = () => {
     const { Clientdata, campusdata, Performancedata, Aidrivendata } = data;
-
     return (
-        <div className="relative flex flex-col items-center justify-center h-auto p-3 pb-10 responsive-section">
+        <div className="relative flex flex-col items-center justify-center h-auto p-3 pb-10 responsiveS-section">
             <pre className="absolute w-full h-full overflow-hidden font-mono text-lg whitespace-pre-wrap lg:-top-5 xl:-top-0 -z-10">
                 <img
                     src={image1}
@@ -68,7 +67,7 @@ const Features = () => {
                             dataType="feature"
                             animationType="fade"
                         >
-                            <Link to="/features">
+                            <Link to={`/Features`}>
                                 <FeatureCard data={data} />
                             </Link>
                         </AnimatedSection>

@@ -8,6 +8,7 @@ const Home = lazy(() => import("../Pages/Home/Home"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
 const Register = lazy(() => import("../pages/Register/Register"));
 const Features = lazy(() => import("../pages/features/Features"));
+const Product = lazy(() => import("../Pages/Product/Product"));
 
 const RoutesConfig = () => (
     <Suspense fallback={<LoadingSpinner />}>
@@ -16,6 +17,7 @@ const RoutesConfig = () => (
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/Features" element={<Features />} />
+            <Route path="/product/:id" element={<Product />} />
         </Routes>
     </Suspense>
 );

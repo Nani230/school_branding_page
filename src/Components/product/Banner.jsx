@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import sliderimg1 from "@assets/sliderimg1.png";
-import sliderimg3 from "@assets/sliderimg3.png";
+
 import Homebanner from "@assets/Home.png";
 import m_banner from "@assets/Home/m_banner.png";
 import { Link } from "react-router-dom";
 
-const Slideshow = () => {
+const Slideshow = ({ data }) => {
     return (
         <>
             <div className="relative  responsive-section flex flex-col w-full h-auto pb-10 lg:pb-0   lg:h-[750px] lg:justify-center lg:items-center">
@@ -25,12 +24,10 @@ const Slideshow = () => {
 
                 <div className="lg:h-[400px] h-[500px]  lg:px-16 mt-10 px-5 lg:-mt-52  items-center w-full flex flex-col lg:flex-row      lg:justify-between">
                     <div
-                        className={`text-start w-full lg:w-3/6 flex flex-col lg:justify-center  lg:gap-5 lg:items-start sm:items-center sm:justify-center`}
+                        className={`text-start w-full lg:w-3/6 flex flex-col lg:justify-center  lg:gap-5 lg:items-center sm:items-center sm:justify-center`}
                     >
                         <h1 className="mb-4 font-sans font-bold leading-tight text-center text-headingcolor sm:text-2xl md:text-3xl lg:text-2xl xl:text-4xl lg:text-start sm:text-center sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-tight">
-                            Dashboard: Core
-                            <br />
-                            Functionalities and Overview.
+                            {data.title}
                         </h1>
                         <div className="flex justify-center w-full my-10 lg:my-0 lg:mt-10">
                             <Link
@@ -44,7 +41,7 @@ const Slideshow = () => {
                         </div>
                     </div>
                     <img
-                        src="https://picsum.photos/600/300?random=1"
+                        src={data.img}
                         alt={""}
                         className={`w-full lg:w-5/12 mt-5 h-60  sm:w-96 lg:h-[87%] transition-opacity duration-1000 `}
                     />

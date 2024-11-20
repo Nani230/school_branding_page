@@ -6,6 +6,15 @@ const Features = () => {
     return (
         <div className="responsive-section">
             <Banner />
+            <p className="relative px-5 font-sans text-sm font-bold lg:text-2xl lg:px-24 -top-16 lg:-top-36 text-headingcolor">
+                The Dashboard serves as the central hub for campus management,
+                offering users easy access to essential functions and a holistic
+                view of key academic and administrative operations. It is
+                designed to enhance user experience by consolidating multiple
+                features and insights into a single interface, enabling seamless
+                access to information and streamlining communication across the
+                organization. Here’s an overview of its main
+            </p>
             <Overview />
             <Chat />
             <div className="px-5 py-10 lg:px-16">
