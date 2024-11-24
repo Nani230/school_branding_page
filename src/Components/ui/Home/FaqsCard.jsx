@@ -13,7 +13,7 @@ const FaqsCard = ({ data, i }) => {
     return (
         <div
             className={`w-full m-2 p-4  rounded-lg transition-all duration-500 ease-in-out ${
-                isOpen ? "bg-[#DBEAFE] shadow-lg" : "bg-headingcolor"
+                isOpen ? "bg-[#DBEAFE] shadow-lg" : "bg-primary"
             } hover:shadow-md`}
         >
             <div
@@ -46,7 +46,7 @@ const FaqsCard = ({ data, i }) => {
                     isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                 }`}
             >
-                <p className="py-2 pl-4 font-sans text-xs font-normal leading-6 sm:text-sm sm:pl-2 text-textcolor">
+                <p className="py-2 pl-4 font-sans text-xs font-normal leading-6 sm:text-sm sm:pl-2 text-secondary">
                     {data.ans}
                 </p>
             </div>

@@ -3,11 +3,11 @@ import React from "react";
 const Card = ({ data }) => {
     return (
         <div
-            className={`flex rounded-xl flex-col items-center lg:items-center   md:flex-row w-full   lg:gap-10
+            className={`flex rounded-xl flex-col items-center lg:items-center   md:flex-row w-full gap-3  lg:gap-10
          lg:p-5 p-3 mb-2`}
         >
             <div
-                className={` lg:w-80 py-5 text-white font-sans font-bold text-center mt-0.5 text-[14px] sm:text-sm md:text-lg bg-textcolor sm:w-40  w-32    rounded-lg flex flex-col items-center justify-center `}
+                className={` lg:w-80 py-5 text-white font-sans font-bold text-center mt-0.5 text-[14px] sm:text-sm md:text-lg bg-secondary sm:w-40  w-32    rounded-lg flex flex-col items-center justify-center `}
             >
                 {data.title}
             </div>

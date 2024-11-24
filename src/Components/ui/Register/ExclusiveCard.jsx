@@ -3,14 +3,14 @@ import { MdCheckBox, MdClose } from "react-icons/md";
 
 const ExclusiveCard = ({ data }) => {
     return (
-        <div className="flex flex-col justify-between h-[550px] w-[350px] sm:w-[500px] lg:w-[450px] xl:w-[500px] gap-4 px-6 py-4 bg-white border-2 rounded-lg border-textcolor">
-            <h1 className="text-sm font-semibold sm:text-xl text-headingcolor">
+        <div className="flex flex-col justify-between h-[550px] w-[350px] sm:w-[500px] lg:w-[450px] xl:w-[500px] gap-4 px-6 py-4 bg-white border-2 rounded-lg border-secondary">
+            <h1 className="text-sm font-semibold sm:text-xl text-primary">
                 {data.title}
                 <span className="ml-3 text-sm lg:text-base font-extralight">
                     {data.subtitle}
                 </span>
             </h1>
-            <h1 className="text-lg font-semibold sm:text-2xl text-headingcolor">
+            <h1 className="text-lg font-semibold sm:text-2xl text-primary">
                 {data.offer}
                 <span className="text-xs font-normal sm:text-sm text-cardtext">
                     {" "}
@@ -33,7 +33,7 @@ const ExclusiveCard = ({ data }) => {
                                     ? data.title === "Regular"
                                         ? "text-red-500"
                                         : "text-green-500"
-                                    : "text-[#172B85]"
+                                    : "text-primary"
                             }
                         >
                             {i === 0 && data.title === "Regular" ? (
@@ -45,7 +45,7 @@ const ExclusiveCard = ({ data }) => {
                         <span
                             className={
                                 i === 0
-                                    ? "text-[#172B85] font-medium text-base"
+                                    ? "text-primary font-medium text-base"
                                     : "text-[#606F7B] text-sm sm:text-base"
                             }
                         >
@@ -59,8 +59,8 @@ const ExclusiveCard = ({ data }) => {
                 <button
                     className={`bg-[#DBEAFE] px-10 py-2 text-sm cursor-pointer ${
                         data.button === "Choose plan"
-                            ? "font-inter font-semibold bg-transparent border-2 rounded-2xl text-headingcolor border-headingcolor"
-                            : "font-mono font-bold rounded-2xl text-headingcolor"
+                            ? "font-inter font-semibold bg-transparent border-2 rounded-2xl text-primary border-primary"
+                            : "font-mono font-bold rounded-2xl text-primary"
                     }`}
                 >
                     {data.button}

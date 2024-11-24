@@ -26,13 +26,13 @@ const Slideshow = ({ data }) => {
                     <div
                         className={`text-start w-full lg:w-3/6 flex flex-col lg:justify-center  lg:gap-5 lg:items-center sm:items-center sm:justify-center`}
                     >
-                        <h1 className="mb-4 font-sans font-bold leading-tight text-center text-headingcolor sm:text-2xl md:text-3xl lg:text-2xl xl:text-4xl lg:text-start sm:text-center sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-tight">
+                        <h1 className="mb-4 font-sans font-bold leading-tight text-center text-primary sm:text-2xl md:text-3xl lg:text-2xl xl:text-4xl lg:text-start sm:text-center sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-tight">
                             {data.title}
                         </h1>
                         <div className="flex justify-center w-full my-10 lg:my-0 lg:mt-10">
                             <Link
                                 to="/Register"
-                                className="flex justify-center py-2 overflow-hidden font-mono text-base font-bold rounded-lg hover:text-white text-white before:bg-[#172B85] bg-textcolor group layer-btn"
+                                className="flex justify-center py-2 overflow-hidden font-mono text-base font-bold text-white rounded-lg hover:text-white before:bg-primary bg-secondary group layer-btn"
                             >
                                 <span className="relative z-20">
                                     Get Personalized Demo

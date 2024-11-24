@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 @layer components {
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+    .zoom-container {
+        width: 24rem; /* Adjust the zoom box size */
+        height: 24rem;
+        border: 1px solid #ccc;
+        background-repeat: no-repeat;
+        background-size: 200%; /* Adjust zoom level */
+        display: none; /* Hidden by default */
+    }
+
+    .img-zoom-result {
+        @apply absolute top-0 left-96 border border-gray-400 w-80 h-80 bg-no-repeat;
+    }
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
     .active-dot::after {
         content: "•";
         position: absolute;

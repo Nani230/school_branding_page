@@ -19,7 +19,7 @@ function FloatingLabelInput({
         <div className="relative mt-4">
             <label
                 htmlFor={name}
-                className={`absolute left-3 top-3 text-textcolor font-sans font-normal text-sm transition-all duration-200 ${
+                className={`absolute left-3 top-3 text-secondary font-sans font-normal text-sm transition-all duration-200 ${
                     isFocused || value
                         ? "top-2 indent-1 -translate-y-2 text-xs"
                         : ""
@@ -33,7 +33,7 @@ function FloatingLabelInput({
                 name={name}
                 value={value}
                 onChange={onChange}
-                className={`w-full p-3 h-16 border text-textcolor font-sans font-normal border-[#172B85] rounded-md outline-none ${
+                className={`w-full p-3 h-16 border text-secondary font-sans font-normal border-primary rounded-md outline-none ${
                     error ? "border-red-500" : "focus:outline-none"
                 }`}
                 onFocus={handleFocus}
@@ -171,7 +171,7 @@ const ContactForm = () => {
                             placeholder="Write your message here"
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full h-32 p-3 border rounded-md outline-none text-textcolor placeholder:text-textcolor font-sans font-normal border-[#172B85] focus:outline-none"
+                            className="w-full h-32 p-3 font-sans font-normal border rounded-md outline-none text-secondary placeholder:text-secondary border-primary focus:outline-none"
                         />
                     </div>
 
@@ -188,14 +188,14 @@ const ContactForm = () => {
                                 className="flex flex-col text-sm font-normal sm:text-lg"
                             >
                                 I have read and accept the Terms of{" "}
-                                <span className="text-headingcolor">
+                                <span className="text-primary">
                                     Service & Privacy Policy *
                                 </span>
                             </label>
                         </div>
                         <button
                             type="submit"
-                            className="px-6 py-2 font-sans font-normal text-white transition duration-300 rounded-full bg-headingcolor"
+                            className="px-6 py-2 font-sans font-normal text-white transition duration-300 rounded-full bg-primary"
                         >
                             SEND MESSAGE
                         </button>

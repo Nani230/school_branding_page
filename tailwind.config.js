@@ -9,8 +9,8 @@ module.exports = {
                     "linear-gradient(169.02deg, #B2EBF2 -58.33%, #4F5EA2 60.57%)",
             },
             colors: {
-                textcolor: "#4F5EA2",
-                headingcolor: "#172B85",
+                primary: "#172B85",
+                secondary: "#4F5EA2",
                 cardtext: "#606F7B",
             },
             boxShadow: {

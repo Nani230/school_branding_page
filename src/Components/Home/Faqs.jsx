@@ -18,7 +18,7 @@ const Faqs = () => {
             </pre>
             <div className="flex items-center flex-col bg-[#E7EAF3] lg:w-8/12 md:w-full sm:w-full lg:p-5 lg:px-9 md:px-3 sm:px-0 rounded-lg">
                 <div className="flex flex-col items-center justify-center p-4">
-                    <h1 className="text-4xl font-bold tracking-wider text-headingcolor">
+                    <h1 className="text-4xl font-bold tracking-wider text-primary">
                         FAQ
                     </h1>
                     <p className="bg-[#546687] p-2 rounded-full w-16 mt-0.5"></p>

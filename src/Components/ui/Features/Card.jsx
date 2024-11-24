@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "../icon/Icon";
 
 const Card = ({ data }) => {
     return (
@@ -7,13 +8,16 @@ const Card = ({ data }) => {
          lg:p-5 p-3 mb-2`}
         >
             <div
-                className={`lg:h-44 lg:w-44 bg-textcolor sm:w-40 sm:h-40 w-32 h-32   rounded-lg flex flex-col items-center justify-center `}
+                className={`lg:h-44 lg:w-44 bg-secondary sm:w-40 sm:h-40 w-32 h-32   rounded-lg flex flex-col items-center justify-center `}
             >
                 <div className="flex flex-col items-center h-full justify-evenly">
-                    <span className="w-5 h-5 text-white sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-10 lg:h-10">
-                        {data.icon}
-                    </span>
-                    <p className="text-white font-sans font-bold text-center mt-0.5 text-[14px] sm:text-sm md:text-lg">
+                    <Icon
+                        Source={data.icon}
+                        fill="white"
+                        className="w-5 h-5 text-white sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-14 lg:h-14"
+                    />
+
+                    <p className="text-white font-sans font-bold text-center px-2 mt-0.5 text-[14px] sm:text-sm md:text-lg">
                         {data.title}
                     </p>
                 </div>

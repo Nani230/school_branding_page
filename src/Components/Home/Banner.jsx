@@ -75,16 +75,16 @@ const Slideshow = () => {
                             fadeOut ? "opacity-0" : "opacity-100"
                         }`}
                     >
-                        <h1 className="mb-4 font-medium leading-tight text-center text-headingcolor sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl lg:text-start sm:text-center sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-tight">
+                        <h1 className="mb-4 font-medium leading-tight text-center text-primary sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl lg:text-start sm:text-center sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-tight">
                             {data[currentIndex].head}
                         </h1>
-                        <p className="font-medium leading-snug text-center text-textcolor sm:text-xl lg:text-xl xl:text-2xl sm:text-center lg:text-start sm:leading-normal lg:leading-relaxed">
+                        <p className="font-medium leading-snug text-center text-secondary sm:text-xl lg:text-xl xl:text-2xl sm:text-center lg:text-start sm:leading-normal lg:leading-relaxed">
                             {data[currentIndex].para}
                         </p>
                         <div className="flex justify-center w-full my-10 lg:my-0 lg:mt-10">
                             <Link
                                 to="/Register"
-                                className="flex justify-center py-2 overflow-hidden font-mono text-base font-bold rounded-lg hover:text-white text-white before:bg-[#172B85] bg-textcolor group layer-btn"
+                                className="flex justify-center py-2 overflow-hidden font-mono text-base font-bold text-white rounded-lg hover:text-white before:bg-primary bg-secondary group layer-btn"
                             >
                                 <span className="relative z-20">
                                     Get Personalized Demo
@@ -107,7 +107,7 @@ const Slideshow = () => {
                                 key={index}
                                 className={`mx-1 border-4 rounded-full cursor-pointer transition-colors duration-300 ${
                                     index === currentIndex
-                                        ? "rounded-xl border-4 border-headingcolor bg-textcolor w-4 h-3 lg:w-10 lg:h-7"
+                                        ? "rounded-xl border-4 border-primary bg-secondary w-4 h-3 lg:w-10 lg:h-7"
                                         : "lg:w-7 lg:h-7 w-4 h-4"
                                 }`}
                                 onClick={() => handleDotClick(index)}

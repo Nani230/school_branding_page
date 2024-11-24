@@ -24,25 +24,25 @@ const Dropdown = React.forwardRef((props, ref) => {
     return (
         <div
             ref={ref}
-            className={`absolute p-8 transform transition-all duration-300 ease-in-out ${
+            className={`md:absolute  p-4 md:p-8 transform transition-all duration-300 ease-in-out ${
                 props.isProductsOpen
-                    ? "opacity-100 scale-100"
+                    ? "opacity-100 scale-100 "
                     : "opacity-0 scale-90"
-            } bg-white shadow-xl rounded-lg w-[600px] top-5 left-1/2 -translate-x-1/2`}
+            } md:bg-white md:shadow-xl rounded-lg w-full  md:w-[600px] right-0 md:top-5 md:left-1/2 md:-translate-x-1/2 `}
         >
             <div className="flex flex-col items-center gap-4">
                 {products.map((product) => (
                     <Link
                         key={product.id}
-                        className="flex items-center w-full gap-8 p-4 text-center bg-[#D0D6ED] rounded-lg shadow-sm transition-transform duration-300 transform hover:scale-105 hover:shadow-lg"
+                        className="flex items-center w-full gap-4  md:gap-8 p-4 text-center bg-[#D0D6ED] rounded-lg shadow-sm transition-transform duration-300 transform hover:scale-105 hover:shadow-lg"
                         to={`/product/${product.id}`}
                     >
                         <img
-                            className="transition-opacity duration-300 w-28 h-28 hover:opacity-90"
+                            className="w-10 h-10 transition-opacity duration-300 md:w-28 md:h-28 hover:opacity-90"
                             src={product.img}
                             alt=""
                         />
-                        <p className="font-sans text-base font-semibold">
+                        <p className="font-sans text-[10px]  sm:text-xs font-semibold text-start text md:text-base">
                             {product.description}
                         </p>
                     </Link>

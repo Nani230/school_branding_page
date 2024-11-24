@@ -5,13 +5,13 @@ const TierCard = ({ data }) => {
     return (
         <>
             <div className="flex flex-col items-center justify-start p-3 pb-4 mb-3 bg-white rounded-lg shadow-custom h-36">
-                <h1 className="font-semibold text-center xl:text-lg text-headingcolor">
+                <h1 className="font-semibold text-center xl:text-lg text-primary">
                     {data.Head}
                 </h1>
-                <p className="text-xs font-normal text-center xl:text-sm text-headingcolor">
+                <p className="text-xs font-normal text-center xl:text-sm text-primary">
                     {data.subhead}
                 </p>
-                <p className="mt-2 text-xs font-normal text-center xl:text-sm text-headingcolor">
+                <p className="mt-2 text-xs font-normal text-center xl:text-sm text-primary">
                     {data.para}
                 </p>
             </div>
@@ -20,8 +20,8 @@ const TierCard = ({ data }) => {
                     {data.description.map((desc, idx) => (
                         <div key={idx}>
                             <div className="flex items-center gap-1">
-                                <MdOutlineStars className="text-headingcolor" />
-                                <p className="p-1 py-2 text-sm font-semibold tracking-wide text-center xl:text-base text-headingcolor">
+                                <MdOutlineStars className="text-primary" />
+                                <p className="p-1 py-2 text-sm font-semibold tracking-wide text-center xl:text-base text-primary">
                                     {desc.module}
                                 </p>
                             </div>
@@ -30,7 +30,7 @@ const TierCard = ({ data }) => {
                                     {desc.submodules.map((sub, subIdx) => (
                                         <li
                                             key={subIdx}
-                                            className="text-xs xl:text-sm text-headingcolor"
+                                            className="text-xs xl:text-sm text-primary"
                                         >
                                             {sub}
                                         </li>

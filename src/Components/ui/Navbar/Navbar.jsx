@@ -149,11 +149,11 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="fixed top-0 z-30 flex items-center justify-between w-full h-20 px-4 bg-white shadow-md lg:px-16 text-textcolor">
+        <nav className="fixed top-0 z-40 flex items-center justify-between w-full h-20 px-4 bg-white shadow-md lg:px-16 text-secondary">
             <Link to="/">
                 <div className="flex items-center">
                     <img src={Logo} alt="Logo" className="h-10" />
-                    <h1 className="ml-2 text-xl font-bold text-headingcolor">
+                    <h1 className="ml-2 text-xl font-bold text-primary">
                         VisionicX
                     </h1>
                 </div>
@@ -168,7 +168,7 @@ const Navbar = () => {
                                 onMouseLeave={handleMouseLeaveProducts}
                                 className={`relative cursor-pointer ${
                                     isProductsOpen
-                                        ? "active-dot text-headingcolor"
+                                        ? "active-dot text-primary"
                                         : ""
                                 }`}
                             >
@@ -185,7 +185,7 @@ const Navbar = () => {
                                 onClick={() => handleScroll(item.link)}
                                 className={`relative cursor-pointer ${
                                     getActiveDot() === item.link
-                                        ? "active-dot text-headingcolor"
+                                        ? "active-dot text-primary"
                                         : ""
                                 }`}
                             >
@@ -196,7 +196,7 @@ const Navbar = () => {
                                 to={item.link}
                                 className={`relative ${
                                     locationpath() === item.link
-                                        ? "active-dot text-headingcolor"
+                                        ? "active-dot text-primary"
                                         : ""
                                 }`}
                             >

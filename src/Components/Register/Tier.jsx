@@ -45,7 +45,7 @@ const Tier = () => {
                     alt=""
                 />
             </div>
-            <h1 className="z-10 mt-5 mb-6 text-lg font-semibold text-center sm:text-xl md:text-2xl lg:text-3xl text-headingcolor">
+            <h1 className="z-10 mt-5 mb-6 text-lg font-semibold text-center sm:text-xl md:text-2xl lg:text-3xl text-primary">
                 Features for Each Tier
             </h1>
 

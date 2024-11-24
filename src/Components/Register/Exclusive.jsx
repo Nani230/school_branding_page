@@ -50,7 +50,7 @@ const Exclusive = () => {
                         {plan.map((planItem, i) => (
                             <button
                                 key={i}
-                                className="w-16 py-1 text-xs font-semibold border-2 sm:text-sm sm:w-24 rounded-2xl border-textcolor text-headingcolor hover:bg-headingcolor hover:text-white"
+                                className="w-16 py-1 text-xs font-semibold border-2 sm:text-sm sm:w-24 rounded-2xl border-secondary text-primary hover:bg-headingcolor hover:text-white"
                             >
                                 {planItem}
                             </button>

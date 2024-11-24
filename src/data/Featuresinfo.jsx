@@ -68,7 +68,8 @@ const Clientdata = [
 
 const campusdata = [
     {
-        icon: <MdOutlineDashboardCustomize className="w-full h-full" />,
+        id: 1,
+        icon: MdOutlineDashboardCustomize,
         title: "Dashboard",
         description: [
             {
@@ -80,14 +81,11 @@ const campusdata = [
                     "Contacts",
                 ],
             },
-            {
-                module: "Chat",
-                submodules: [],
-            },
         ],
     },
     {
-        icon: <FaRoute className="w-full h-full" />,
+        id: 2,
+        icon: FaRoute,
         title: "Geo location",
         description: [
             {
@@ -97,7 +95,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <MdOutlineDashboardCustomize className="w-full h-full" />,
+        id: 3,
+        icon: MdOutlineDashboardCustomize,
         title: "Academics",
         description: [
             {
@@ -115,7 +114,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <IoNewspaper className="w-full h-full" />,
+        id: 4,
+        icon: IoNewspaper,
         title: "Exams",
         description: [
             {
@@ -125,7 +125,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <FaCalendarAlt className="w-full h-full" />,
+        id: 5,
+        icon: FaCalendarAlt,
         title: "Events",
         description: [
             {
@@ -135,7 +136,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <FaUsers className="w-full h-full" />,
+        id: 6,
+        icon: FaUsers,
         title: "Users",
         description: [
             {
@@ -152,7 +154,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <IoCashOutline className="w-full h-full" />,
+        id: 7,
+        icon: IoCashOutline,
         title: "Finance",
         description: [
             {
@@ -166,18 +169,10 @@ const campusdata = [
             },
         ],
     },
+
     {
-        icon: <MdOutlineEmojiTransportation className="w-full h-full" />,
-        title: "Transport",
-        description: [
-            {
-                module: "Transport",
-                submodules: ["Route Management", "Driver Management"],
-            },
-        ],
-    },
-    {
-        icon: <GiFamilyHouse className="w-full h-full" />,
+        id: 8,
+        icon: GiFamilyHouse,
         title: "Hostel",
         description: [
             {
@@ -192,7 +187,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <IoLibrary className="w-full h-full" />,
+        id: 9,
+        icon: IoLibrary,
         title: "Library",
         description: [
             {
@@ -202,7 +198,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <FaWarehouse className="w-full h-full" />,
+        id: 10,
+        icon: FaWarehouse,
         title: "Inventory",
         description: [
             {
@@ -212,7 +209,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <LiaBusinessTimeSolid className="w-full h-full" />,
+        id: 11,
+        icon: LiaBusinessTimeSolid,
         title: "Timesheet",
         description: [
             {
@@ -228,7 +226,8 @@ const campusdata = [
         ],
     },
     {
-        icon: <VscFileSubmodule className="w-full h-full" />,
+        id: 12,
+        icon: VscFileSubmodule,
         title: "File Management",
         description: [
             {
@@ -238,10 +237,10 @@ const campusdata = [
         ],
     },
 ];
-
 const Performancedata = [
     {
-        icon: <GrDocumentPerformance className="w-full h-full" />,
+        id: 1,
+        icon: GrDocumentPerformance,
         title: "My Performance",
         description: [
             {
@@ -250,13 +249,14 @@ const Performancedata = [
                     "Employee Performance",
                     "Task Performance",
                     "Department Performance",
-                    " Job Applicants",
+                    "Job Applicants",
                 ],
             },
         ],
     },
     {
-        icon: <AiFillProfile className="w-full h-full" />,
+        id: 2,
+        icon: AiFillProfile,
         title: "Expense Claims",
         description: [
             {
@@ -266,7 +266,8 @@ const Performancedata = [
         ],
     },
     {
-        icon: <FaTools className="w-full h-full" />,
+        id: 3,
+        icon: FaTools,
         title: "My Requests",
         description: [
             {
@@ -276,7 +277,8 @@ const Performancedata = [
         ],
     },
     {
-        icon: <FaAward className="w-full h-full" />,
+        id: 4,
+        icon: FaAward,
         title: "My Rewards",
         description: [
             {
@@ -286,7 +288,8 @@ const Performancedata = [
         ],
     },
     {
-        icon: <MdNotificationsActive className="w-full h-full" />,
+        id: 5,
+        icon: MdNotificationsActive,
         title: "Notifications",
         description: [
             {
@@ -296,7 +299,8 @@ const Performancedata = [
         ],
     },
     {
-        icon: <IoMdSettings className="w-full h-full" />,
+        id: 6,
+        icon: IoMdSettings,
         title: "Settings",
         description: [
             {
@@ -306,7 +310,8 @@ const Performancedata = [
         ],
     },
     {
-        icon: <RiCustomerService2Line className="w-full h-full" />,
+        id: 7,
+        icon: RiCustomerService2Line,
         title: "Customer Support",
         description: [
             {
@@ -319,7 +324,8 @@ const Performancedata = [
 
 const Aidrivendata = [
     {
-        icon: <GiWallet className="w-full h-full" />,
+        id: 1,
+        icon: GiWallet,
         title: "Wallet",
         description: [
             {
@@ -329,7 +335,8 @@ const Aidrivendata = [
         ],
     },
     {
-        icon: <IoFastFoodSharp className="w-full h-full" />,
+        id: 2,
+        icon: IoFastFoodSharp,
         title: "Food Court",
         description: [
             {
@@ -339,7 +346,8 @@ const Aidrivendata = [
         ],
     },
     {
-        icon: <FaTv className="w-full h-full" />,
+        id: 3,
+        icon: FaTv,
         title: "Collaboration Tools",
         description: [
             {
@@ -349,7 +357,8 @@ const Aidrivendata = [
         ],
     },
     {
-        icon: <GiArtificialIntelligence className="w-full h-full" />,
+        id: 4,
+        icon: GiArtificialIntelligence,
         title: "AI-Based Applications",
         description: [
             {
@@ -361,7 +370,24 @@ const Aidrivendata = [
         ],
     },
     {
-        icon: <HiMiniChatBubbleBottomCenterText className="w-full h-full" />,
+        id: 5,
+        icon: HiMiniChatBubbleBottomCenterText,
+        title: "Transport",
+        description: [
+            {
+                module: "Transport",
+                submodules: [
+                    "Branches",
+                    "Academic Year",
+                    "User Profile",
+                    "Contacts",
+                ],
+            },
+        ],
+    },
+    {
+        id: 6,
+        icon: HiMiniChatBubbleBottomCenterText,
         title: "AI ChatBot",
         description: [
             {

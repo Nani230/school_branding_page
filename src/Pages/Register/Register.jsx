@@ -18,11 +18,11 @@ const Register = () => {
                     />
                 </pre>
                 <div className="w-2/4 p-5 m-5 bg-white bg-opacity-75 rounded-lg shadow-lg">
-                    <h1 className="text-xs font-bold text-center md:leading-10 font-inter sm:text-sm lg:text-xl xl:text-3xl text-headingcolor">
+                    <h1 className="text-xs font-bold text-center md:leading-10 font-inter sm:text-sm lg:text-xl xl:text-3xl text-primary">
                         Exclusive Offer for Schools – Save on Our Education
                         Management System!
                     </h1>
-                    <p className="mt-4 text-xs text-center md:text-sm text-headingcolor">
+                    <p className="mt-4 text-xs text-center md:text-sm text-primary">
                         Limited Time Discounts – Register Early and Unlock Huge
                         Savings!
                     </p>
@@ -31,11 +31,11 @@ const Register = () => {
             </div>
 
             <div className="flex flex-col gap-2 mb-5 ">
-                <h1 className="font-semibold text-center md:text-xl lg:text-2xl xl:text-3xl text-headingcolor">
+                <h1 className="font-semibold text-center md:text-xl lg:text-2xl xl:text-3xl text-primary">
                     Let our team handle the entire setup, ensuring zero hassle
                     for you.
                 </h1>
-                <p className="text-[#172B85] text-center">
+                <p className="text-center text-primary">
                     Don’t miss the limited offer.
                 </p>
             </div>

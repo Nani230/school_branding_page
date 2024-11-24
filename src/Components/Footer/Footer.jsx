@@ -26,14 +26,14 @@ const Footer = () => {
     const servicesInfo = ["Service 1", "Service 2", "Service 3", "Service 4"];
 
     return (
-        <div className="flex flex-col items-center gap-20 py-10 responsive-section bg-headingcolor">
+        <div className="flex flex-col items-center gap-20 py-10 responsive-section bg-primary">
             <div className="flex flex-col items-center gap-8">
                 <h1 className="font-sans font-bold text-center text-white lg:text-3xl md:text-xl sm:text-lg">
                     Transform Your Educational Experience Today!
                 </h1>
                 <Link
                     to="/Register"
-                    className="flex justify-center py-2 overflow-hidden font-mono text-base font-bold rounded-lg hover:text-white text-headingcolor border border-headingcolor before:bg-textcolor bg-[#DBEAFE] group layer-btn"
+                    className="flex justify-center py-2 overflow-hidden font-mono text-base font-bold rounded-lg hover:text-white text-primary border border-primary before:bg-secondary bg-[#DBEAFE] group layer-btn"
                 >
                     <span className="relative z-20">Register Now</span>
                 </Link>
@@ -77,7 +77,7 @@ const Footer = () => {
                     {socialIcons.map(({ icon, key }) => (
                         <li
                             key={key}
-                            className="flex items-center justify-center p-2 text-white rounded-full cursor-pointer bg-textcolor"
+                            className="flex items-center justify-center p-2 text-white rounded-full cursor-pointer bg-secondary"
                         >
                             {icon}
                         </li>
