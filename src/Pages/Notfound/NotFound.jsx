@@ -29,11 +29,11 @@ const NotFound = () => {
     };
 
     return (
-        <div className="relative flex items-start justify-center min-h-screen -mt-10">
+        <div className="relative flex items-center justify-center min-h-screen sm:items-start sm:-mt-10">
             {/* Decorative Background */}
             <div className="absolute top-0 left-0 w-full h-full">
-                <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] bg-secondary rounded-full opacity-20 blur-3xl"></div>
-                <div className="absolute bottom-1/4 right-1/3 w-[300px] h-[300px] bg-primary rounded-full opacity-20 blur-3xl"></div>
+                <div className="absolute  sm:top-1/4 sm:left-1/3 w-[300px] h-[300px] bg-secondary rounded-full opacity-20 blur-3xl"></div>
+                <div className="absolute sm:bottom-1/4 sm:right-1/3 w-[300px] h-[300px] bg-primary rounded-full opacity-20 blur-3xl"></div>
             </div>
 
             {/* Content Section */}
@@ -44,7 +44,7 @@ const NotFound = () => {
             >
                 {/* Large 404 with Robot */}
                 <div className="flex items-center justify-center gap-6">
-                    <h1 className="text-primary text-[12rem] md:text-[15rem] font-extrabold">
+                    <h1 className="text-primary text-[5rem] sm:text-[12rem] md:text-[15rem] font-extrabold">
                         4
                     </h1>
                     <img
@@ -52,13 +52,13 @@ const NotFound = () => {
                         alt="Robot Illustration"
                         className="w-40 ml-8 md:w-52 animate-float"
                     />
-                    <h1 className="text-primary text-[12rem] md:text-[15rem] font-extrabold">
+                    <h1 className="text-primary text-[5rem] sm:text-[12rem] md:text-[15rem] font-extrabold">
                         4
                     </h1>
                 </div>
 
                 {/* Error Message */}
-                <h2 className="-mt-5 text-3xl font-bold md:text-4xl text-primary">
+                <h2 className="text-3xl font-bold pt sm:-mt-5 md:text-4xl text-primary">
                     Oops! You seem lost.
                 </h2>
                 <p className="mt-3 text-lg md:text-xl text-[#606F7B]">
@@ -77,7 +77,7 @@ const NotFound = () => {
                             placeholder="Search for a page..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-64 px-4 py-2 border-2 rounded-lg border-secondary"
+                            className="w-48 px-4 py-2 border-2 rounded-lg  sm:w-64 border-secondary"
                         />
                         <button
                             type="submit"
