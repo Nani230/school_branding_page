@@ -54,10 +54,10 @@ function App() {
                 >
                     <button
                         onClick={scrollToTop}
-                        className="p-3 text-white rounded-full shadow-lg bg-he bg-headingcolor focus:outline-none transition-transform duration-300 transform hover:translate-y-[-5px]"
+                        className="p-3 text-primary bg-primary rounded-full shadow-lg bg-he bg-headingcolor focus:outline-none transition-transform duration-300 transform hover:translate-y-[-5px]"
                         aria-label="Scroll to top"
                     >
-                        <FaArrowUp className="transition-transform duration-300" />
+                        <FaArrowUp className="text-white transition-transform duration-300" />
                     </button>
                 </div>
                 <div className="mt-20">
