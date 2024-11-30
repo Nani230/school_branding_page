@@ -5,6 +5,7 @@ import { FaRegCircleDot } from "react-icons/fa6";
 import { MdOutlineStars } from "react-icons/md";
 import Exclusive from "@/Components/Register/Exclusive";
 import Tier from "@/Components/Register/Tier";
+import Terms from "@/Components/Register/Terms";
 
 const Register = () => {
     return (
@@ -40,6 +41,7 @@ const Register = () => {
                 </p>
             </div>
             <Tier />
+            <Terms />
         </div>
     );
 };

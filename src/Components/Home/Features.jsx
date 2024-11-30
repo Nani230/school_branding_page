@@ -10,10 +10,7 @@ import { Link } from "react-router-dom";
 const Features = () => {
     const { Clientdata, campusdata, Performancedata, Aidrivendata } = data;
     return (
-        <section
-            id="features"
-            className="relative flex flex-col items-center justify-center h-auto p-3 pb-10 responsive-section"
-        >
+        <div className="relative flex flex-col items-center justify-center h-auto p-3 pb-10 responsive-section">
             <pre className="absolute w-full h-full overflow-hidden font-mono text-lg whitespace-pre-wrap lg:-top-5 xl:-top-0 -z-10">
                 <img
                     src={image1}
@@ -27,17 +24,15 @@ const Features = () => {
                 />
             </pre>
 
-            <section className="flex flex-col items-center justify-center p-4 pt-20 ">
-                <h1 className="font-sans text-4xl font-bold tracking-wider text-primary ">
-                    Feature
-                </h1>
-                <p className="bg-custom-gradient p-2 rounded-full w-20 mt-0.5"></p>
-            </section>
             <section
                 id="features"
                 className="flex flex-col items-center justify-center mb-3"
             >
-                <h1 className="py-6 pb-8 font-bold tracking-wider text-center text-primary lg:text-2xl md:text-2xl sm:text-lg ">
+                <h1 className="pt-20 font-sans text-4xl font-bold tracking-wider text-primary">
+                    Feature
+                </h1>
+                <p className="bg-custom-gradient p-2 rounded-full w-20 mt-0.5"></p>
+                <h1 className="py-6 pb-8 mt-4 font-bold tracking-wider text-center text-primary lg:text-2xl md:text-2xl sm:text-lg ">
                     Core Campus Management
                 </h1>
                 <div className="flex flex-wrap justify-around gap-10 md:px-20">
@@ -105,7 +100,7 @@ const Features = () => {
                     ))}
                 </div>
             </section>
-        </section>
+        </div>
     );
 };
 

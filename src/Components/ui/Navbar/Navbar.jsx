@@ -40,6 +40,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const sections = document.querySelectorAll("section");
+        const thresholdval = window.innerWidth < 1300 ? 0.46 : 0.5;
         observerRef.current = new IntersectionObserver(
             (entries) => {
                 if (isObserverDisabled || isProductsOpen) return;
@@ -56,10 +57,11 @@ const Navbar = () => {
             {
                 root: null,
                 rootMargin: "0px",
-                threshold: 0.5,
+                threshold: thresholdval,
             }
         );
         sections.forEach((section) => {
+            console.log(section);
             observerRef.current.observe(section);
         });
 
