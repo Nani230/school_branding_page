@@ -8,18 +8,18 @@ const MobileMenu = ({
     navItems,
     handleScroll,
     activeSection,
+    locationpath,
     isProductsOpen,
     setIsProductsOpen,
     dropdownRef,
 }) => {
     const toggleDropdown = (e) => {
-        e.stopPropagation(); // Prevent propagation to child elements
-        setIsProductsOpen(true);
+        setIsProductsOpen(!isProductsOpen);
     };
 
     return (
         <ul
-            className={`absolute top-20 right-0 w-3/4 bg-white flex flex-col gap-5 shadow-md text-center h-screen py-10 z-10 font-semibold text-textcolor md:hidden transition-transform duration-300 transform ${
+            className={`absolute top-20 right-0 w-3/4 h-[calc(100vh-5rem)] overflow-y-scroll hide-scrollbar bg-white flex flex-col gap-5 shadow-md text-center py-10 font-semibold text-textcolor md:hidden transition-transform duration-300 transform ${
                 isOpen ? "translate-x-0" : "translate-x-full"
             }`}
         >
@@ -75,7 +75,7 @@ const MobileMenu = ({
                         <Link
                             to={item.link}
                             className={`relative ${
-                                activeSection === item.link
+                                locationpath === item.link
                                     ? "border-b-2 border-secondary"
                                     : ""
                             }`}

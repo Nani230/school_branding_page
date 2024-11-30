@@ -1,10 +1,13 @@
+import mod from "@assets/product/mod.png";
+import sidemod from "@assets/product/sidemod.png";
+
 const data = [
     {
         id: 1,
         title: "Attendance Management System ",
         des: "The project involves developing an attendance system that integrates face recognition, fingerprint scanning, and RFID technology for secure and accurate identification. The system will utilize a combination of sensors, including camera sensors for face recognition, fingerprint sensors, and RFID readers, all connected to a custom-designed PCB (Printed Circuit Board) to manage the sensor interactions and data processing.",
-        img: "https://picsum.photos/600/300?random=1",
-        bannerimg: "https://picsum.photos/600/300?random=1",
+        img: mod,
+        bannerimg: sidemod,
         goal: "The goal of the project is to provide a reliable and efficient attendance solution that can be easily deployed in various environments like schools, offices, or other institutions, ensuring accurate tracking and security.",
         features: [
             {
@@ -41,8 +44,8 @@ const data = [
         id: 2,
         title: "Single-Phase Energy Monitoring System",
         des: "Our single-phase energy monitoring system is designed for efficient control and management of energy in residential or small-scale commercial settings. Equipped with app-based control, it allows users to manage power usage remotely through intuitive switches and settings. The system sends real-time alerts, notifying users of any irregularities in power consumption or potential issues, ensuring optimal energy use and timely action. This solution provides an all-in-one platform for seamless energy monitoring and control, enhancing both convenience and energy efficiency.",
-        img: "https://picsum.photos/600/300?random=2",
-        bannerimg: "https://picsum.photos/600/300?random=2",
+        img: mod,
+        bannerimg: sidemod,
         goal: "The goal of the project is to provide a reliable and efficient attendance solution that can be easily deployed in various environments like schools, offices, or other institutions, ensuring accurate tracking and security.",
         features: [
             {
@@ -79,8 +82,8 @@ const data = [
         id: 3,
         title: "Three-Phase Energy Monitoring System ",
         des: "Our three-phase energy monitoring system offers comprehensive control and monitoring capabilities for industrial or larger commercial facilities, where balanced energy management is critical. Through mobile-based control, users can remotely monitor and adjust energy settings, ensuring stability and efficient distribution across three phases. The system supports real-time monitoring, allowing users to view consumption data and receive alerts on mobile devices. This robust solution is ideal for large-scale energy management, enabling users to achieve optimal power efficiency and reliability across complex environments.",
-        img: "https://picsum.photos/600/300?random=3",
-        bannerimg: "https://picsum.photos/600/300?random=3",
+        img: mod,
+        bannerimg: sidemod,
         goal: "The goal of the project is to provide a reliable and efficient attendance solution that can be easily deployed in various environments like schools, offices, or other institutions, ensuring accurate tracking and security.",
         features: [
             {

@@ -1,9 +1,14 @@
 import {
+    FaWallet,
+    FaUtensils,
+    FaList,
     FaTree,
     FaPhone,
     FaStickyNote,
     FaEdit,
     FaBell,
+    FaRoute,
+    FaCarAlt,
     FaUserShield,
     FaUserTie,
     FaChalkboardTeacher,
@@ -403,6 +408,66 @@ const campusdata = [
                 icon: FaCloudUploadAlt,
                 title: "Upload/Download Files",
                 para: "The upload/download functionality allows users to easily upload documents to a centralized system or download them as needed. This feature enables seamless sharing of files among team members, departments, or external partners. Users can upload files from their local devices to the system, ensuring that important documents are stored securely and backed up. Conversely, downloading files ensures that users can quickly access and work with the documents offline when necessary. This functionality ensures that the file exchange process is fast, simple, and efficient.",
+            },
+        ],
+    },
+    {
+        id: 13,
+        name: "Wallet: Digital Payments",
+        title: "Wallet",
+        benifit:
+            "The Digital Payments feature simplifies financial transactions by centralizing them within the platform, making it easier and more efficient for users to make payments and manage their finances. By offering secure, seamless, and flexible payment options, this feature enhances user convenience and ensures that transactions are completed quickly and safely. It eliminates the need for external payment methods, streamlining the payment process for both individuals and organizations. The transparency and real-time tracking of payments further empower users to stay on top of their financial activities, ensuring a smooth and reliable experience.",
+        des: `The Wallet feature, specifically the Digital Payments section, provides users with a secure and convenient way to handle financial transactions within the platform. It allows users to make payments, receive funds, and manage their digital finances directly through the system, without the need for external payment methods or platforms. The Digital Payments feature ensures a seamless, fast, and secure way to handle all financial transactions, whether it's for services, products, or internal company expenses.`,
+        data: [
+            {
+                icon: FaWallet,
+                title: "Digital Payments",
+                para: "The digital payments functionality enables users to pay for various services or products using their wallet balance or linked payment methods. Users can securely store and manage their funds in the digital wallet, and make payments for items such as fees, subscriptions, or purchases directly from the platform. It integrates with multiple payment gateways and supports various methods like credit/debit cards, bank transfers, or digital wallets, offering flexibility in how users can pay. The system ensures secure transactions through encryption and complies with financial regulations, providing peace of mind to users when making payments. Additionally, users can monitor their transaction history, check their wallet balance, and even receive notifications for successful payments, ensuring transparency and control over their digital finances.",
+            },
+        ],
+    },
+    {
+        id: 14,
+        name: "Food Court: Food List, Manage Orders, Food Menu",
+        title: "Food Court",
+        benifit:
+            "The Food Court feature is designed to provide a smooth and organized system for managing food-related activities within an organization or campus. It enables users to access a comprehensive food menu, place orders, and manage food-related tasks efficiently. The feature aims to enhance the dining experience by simplifying the ordering process, improving food availability, and ensuring smooth management of food services.",
+        des: `The Food Court feature is designed to provide a smooth and organized system for managing food-related activities within an organization or campus. It enables users to access a comprehensive food menu, place orders, and manage food-related tasks efficiently. The feature aims to enhance the dining experience by simplifying the ordering process, improving food availability, and ensuring smooth management of food services.`,
+        data: [
+            {
+                icon: FaList,
+                title: "Food List",
+                para: "The food list section provides users with a detailed overview of available food items within the food court or dining facility. This list includes all the food options currently on offer, ranging from snacks and beverages to full meals. Users can browse through the available items and view details such as ingredients, nutritional information, and prices. This helps users make informed choices based on their preferences, dietary needs, or budget.",
+            },
+            {
+                icon: FaClipboardList,
+                title: "Manage Orders",
+                para: "The manage orders section allows users to place, track, and manage their food orders. Whether it's an individual or bulk order, users can easily select items from the food list, specify the quantity, and place their order with a few clicks. This section also enables the monitoring of the order status—whether it's being prepared, ready for pickup, or delivered. Additionally, users can modify or cancel orders before they are processed, giving them flexibility in their choices.",
+            },
+            {
+                icon: FaUtensils,
+                title: "Food Menu",
+                para: "The food menu section is where the full list of available food items is displayed, categorized into different sections (e.g., breakfast, lunch, snacks, drinks). It gives users an easy-to-navigate interface to explore various food options and choose meals based on their preferences. The menu can be updated in real-time to reflect seasonal items, special offers, or any changes in food availability, ensuring users always have access to the most current information.",
+            },
+        ],
+    },
+    {
+        id: 15,
+        name: "Transport: Route Management, Driver Management",
+        title: "Transport",
+        benifit:
+            "The Route Management and Driver Management features work together to optimize transportation logistics, improving both efficiency and safety. By streamlining route planning and adjusting in real-time, organizations can ensure punctual transport services while minimizing disruptions. The Driver Management system further strengthens the overall transportation framework by maintaining high safety and performance standards, preventing operational errors, and ensuring that drivers adhere to necessary regulations. Together, these features create a more reliable, safe, and cost-effective transportation system, enhancing the overall experience for users and increasing operational effectiveness.",
+        des: `The Transport feature focuses on optimizing and managing transportation operations within an organization, ensuring smooth logistics for employees, students, or other stakeholders who rely on organizational transport systems. The Route Management and Driver Management components work together to streamline travel operations, enhance efficiency, and ensure safety for all users.`,
+        data: [
+            {
+                icon: FaRoute,
+                title: "Route Management",
+                para: "The Route Management system allows organizations to plan, optimize, and monitor transport routes in real-time. It enables the creation of the most efficient travel paths for buses, shuttles, or other transport vehicles based on factors like traffic conditions, pick-up/drop-off points, and time constraints. By analyzing real-time data, it can automatically adjust routes to avoid delays and ensure timely arrivals. The system also allows for scheduling and tracking routes, ensuring that transportation services are well-coordinated and responsive to the needs of passengers. Additionally, route management provides transparency, as users can view upcoming routes, estimated arrival times, and potential delays.",
+            },
+            {
+                icon: FaCarAlt,
+                title: "Driver Management",
+                para: " Driver Management ensures that all drivers are properly assigned, monitored, and evaluated to maintain safety and operational efficiency. This includes tracking the performance, schedules, and availability of drivers, as well as ensuring compliance with regulations, such as work hours or safety standards. The system can also provide driver performance reports, which help in identifying any areas of improvement and maintaining high service quality. Features such as automated notifications for driver assignments, real-time location tracking, and monitoring driver behavior contribute to reducing risks and enhancing safety for both drivers and passengers. Additionally, organizations can track the health and certification status of drivers to ensure that only qualified personnel are behind the wheel",
             },
         ],
     },

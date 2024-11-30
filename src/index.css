@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer components {
+    /* Hide scrollbar for Webkit-based browsers */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for all other browsers */
+    .hide-scrollbar {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+    }
+
     .animate-float {
         animation: float 3s ease-in-out infinite;
     }

@@ -77,7 +77,7 @@ const NotFound = () => {
                             placeholder="Search for a page..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-48 px-4 py-2 border-2 rounded-lg  sm:w-64 border-secondary"
+                            className="w-48 px-4 py-2 border-2 rounded-lg sm:w-64 border-secondary"
                         />
                         <button
                             type="submit"
@@ -89,31 +89,6 @@ const NotFound = () => {
                     {searchError && (
                         <p className="mt-2 text-red-500">{searchError}</p>
                     )}
-                </div>
-
-                {/* Helpful Links */}
-                <div className="mt-4 text-primary">
-                    <p>Or check out some of these links:</p>
-                    <div className="flex items-center justify-center gap-4 mt-4">
-                        <Link
-                            to="/"
-                            className="px-6 py-2 text-lg font-medium text-white transition-all duration-300 rounded-lg bg-primary hover:bg-secondary"
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            to="/Register"
-                            className="px-6 py-2 text-lg font-medium text-white transition-all duration-300 rounded-lg bg-secondary hover:bg-primary"
-                        >
-                            Register
-                        </Link>
-                        <Link
-                            to="/contact"
-                            className="px-6 py-2 text-lg font-medium text-white transition-all duration-300 rounded-lg bg-secondary hover:bg-primary"
-                        >
-                            Contact
-                        </Link>
-                    </div>
                 </div>
 
                 {/* Go Back Home Button */}

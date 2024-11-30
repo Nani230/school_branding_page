@@ -41,7 +41,7 @@ const Slideshow = ({ data }) => {
                         </div>
                     </div>
                     <img
-                        src={data.img}
+                        src={data.bannerimg}
                         alt={""}
                         className={`w-full lg:w-5/12 mt-5 h-60  sm:w-96 lg:h-[87%] transition-opacity duration-1000 `}
                     />

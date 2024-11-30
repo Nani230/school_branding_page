@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import sliderimg1 from "@assets/sliderimg1.png";
-import sliderimg3 from "@assets/sliderimg3.png";
+import sliderimg1 from "@assets/Home/lap.png";
+import sliderimg2 from "@assets/Home/mobile.png";
+import sliderimg3 from "@assets/Home/devices.png";
+
 import Homebanner from "@assets/Home.png";
 import m_banner from "@assets/Home/m_banner.png";
 import { Link } from "react-router-dom";
@@ -9,19 +11,19 @@ const data = [
     {
         head: "Revolutionizing Education Management with VisionicX!",
         para: "Empower your school with seamless communication, efficient administration, and engaging learning experiences.",
-        img: "https://picsum.photos/600/300?random=1",
+        img: sliderimg1,
     },
     {
         head: "Your All-in-One Solution for Modern Education!",
         para: "Simplify operations, enhance engagement, and foster success across schools, colleges, and campuses with our advanced management platform.",
-        img: "https://picsum.photos/600/300?random=2",
+        img: sliderimg2,
     },
     {
         head: "Exclusive Offer for Schools and colleges – Save on Our Education Management System!",
         para: `Get up to 100% Off, Offer Valid Till November 30th.
         
         Limited Time Discounts – Register Early and Unlock Huge Savings!`,
-        img: "https://picsum.photos/600/300?random=2",
+        img: sliderimg3,
     },
 ];
 

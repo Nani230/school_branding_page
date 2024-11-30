@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import sliderimg1 from "@assets/sliderimg1.png";
-import sliderimg3 from "@assets/sliderimg3.png";
 import Homebanner from "@assets/Home.png";
 import m_banner from "@assets/Home/m_banner.png";
 import { Link } from "react-router-dom";
+import lap from "@assets/Home/lap.png";
 
 const Slideshow = ({ data }) => {
     return (
@@ -42,7 +41,7 @@ const Slideshow = ({ data }) => {
                         </div>
                     </div>
                     <img
-                        src="https://picsum.photos/600/300?random=1"
+                        src={lap}
                         alt={""}
                         className={`w-full lg:w-5/12 mt-5 h-60  sm:w-96 lg:h-[87%] transition-opacity duration-1000 `}
                     />

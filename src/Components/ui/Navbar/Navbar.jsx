@@ -39,17 +39,6 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        if (isProductsOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
-        }
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [isProductsOpen]);
-
-    useEffect(() => {
         const sections = document.querySelectorAll("section");
         observerRef.current = new IntersectionObserver(
             (entries) => {

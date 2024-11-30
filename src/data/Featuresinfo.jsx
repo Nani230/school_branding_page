@@ -90,7 +90,13 @@ const campusdata = [
         description: [
             {
                 module: "Geo location",
-                submodules: ["Track and manage locations", "Maps integration"],
+                submodules: [
+                    "Track Branches",
+                    "Blocks and Building Layouts",
+                    "Floors Overview",
+                    "Room-Level Tracking",
+                    "Navigation and Search Optimization",
+                ],
             },
         ],
     },
@@ -148,7 +154,9 @@ const campusdata = [
                     "Teachers",
                     "Students",
                     "Workers",
-                    "Etc..",
+                    "Parents",
+                    "Drivers",
+                    "Workers",
                 ],
             },
         ],
@@ -220,7 +228,8 @@ const campusdata = [
                     "Apply Leave",
                     "Stand-By",
                     "Shift Management",
-                    "Requests, FAQ",
+                    "Requests",
+                    "FAQ",
                 ],
             },
         ],
@@ -233,6 +242,39 @@ const campusdata = [
             {
                 module: "File Management",
                 submodules: ["Document Handling", "Upload/Download Files"],
+            },
+        ],
+    },
+    {
+        id: 13,
+        icon: GiWallet,
+        title: "Wallet",
+        description: [
+            {
+                module: "Wallet",
+                submodules: ["Digital Payments"],
+            },
+        ],
+    },
+    {
+        id: 14,
+        icon: IoFastFoodSharp,
+        title: "Food Court",
+        description: [
+            {
+                module: "Food Court",
+                submodules: ["Food List", "Manage Orders", "Food Menu"],
+            },
+        ],
+    },
+    {
+        id: 5,
+        icon: HiMiniChatBubbleBottomCenterText,
+        title: "Transport",
+        description: [
+            {
+                module: "Transport",
+                submodules: ["Route Management", "Driver Management"],
             },
         ],
     },
@@ -325,74 +367,38 @@ const Performancedata = [
 const Aidrivendata = [
     {
         id: 1,
-        icon: GiWallet,
-        title: "Wallet",
-        description: [
-            {
-                module: "Wallet",
-                submodules: ["Digital Payments"],
-            },
-        ],
-    },
-    {
-        id: 2,
-        icon: IoFastFoodSharp,
-        title: "Food Court",
-        description: [
-            {
-                module: "Food Court",
-                submodules: ["Food List", "Manage Orders", "Food Menu"],
-            },
-        ],
-    },
-    {
-        id: 3,
         icon: FaTv,
         title: "Collaboration Tools",
         description: [
             {
                 module: "Collaboration Tools",
-                submodules: ["Google Meet/Zoom Integration"],
+                submodules: ["Video Meetings"],
             },
         ],
     },
     {
-        id: 4,
+        id: 2,
         icon: GiArtificialIntelligence,
         title: "AI-Based Applications",
         description: [
             {
                 module: "AI-Based Applications",
-                submodules: [
-                    "Safety & Security (Fire Detection, Person Tracking)",
-                ],
+                submodules: ["Fire Detection", "Person Tracking"],
             },
         ],
     },
+
     {
-        id: 5,
-        icon: HiMiniChatBubbleBottomCenterText,
-        title: "Transport",
-        description: [
-            {
-                module: "Transport",
-                submodules: [
-                    "Branches",
-                    "Academic Year",
-                    "User Profile",
-                    "Contacts",
-                ],
-            },
-        ],
-    },
-    {
-        id: 6,
+        id: 3,
         icon: HiMiniChatBubbleBottomCenterText,
         title: "AI ChatBot",
         description: [
             {
                 module: "AI ChatBot",
-                submodules: ["(Automatic Calling System)"],
+                submodules: [
+                    "Automatic Calling System",
+                    "AI ChatBot Integration",
+                ],
             },
         ],
     },

@@ -4,6 +4,8 @@ import React from "react";
 import scanner from "@assets/product/Scanner.png";
 import singlephase from "@assets/product/singlephase.png";
 import threephase from "@assets/product/threephase.png";
+import universal from "@assets/product/universalmanagement.png";
+
 import { Link } from "react-router-dom";
 
 const Dropdown = React.forwardRef((props, ref) => {
@@ -18,6 +20,11 @@ const Dropdown = React.forwardRef((props, ref) => {
             id: 3,
             img: threephase,
             description: "Three-Phase Energy Monitoring System",
+        },
+        {
+            id: 4,
+            img: universal,
+            description: "Universal Management System",
         },
     ];
 
@@ -35,7 +42,7 @@ const Dropdown = React.forwardRef((props, ref) => {
                     <Link
                         key={product.id}
                         className="flex items-center w-full gap-4  md:gap-8 p-4 text-center bg-[#D0D6ED] rounded-lg shadow-sm transition-transform duration-300 transform hover:scale-105 hover:shadow-lg"
-                        to={`/product/${product.id}`}
+                        to={product.id === 4 ? "/" : `/product/${product.id}`}
                     >
                         <img
                             className="w-10 h-10 transition-opacity duration-300 md:w-28 md:h-28 hover:opacity-90"

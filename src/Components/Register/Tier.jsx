@@ -49,11 +49,11 @@ const Tier = () => {
                 Features for Each Tier
             </h1>
 
-            <div className="flex flex-wrap items-center justify-center w-full gap-5 mt-2 lg:flex-nowrap">
+            <div className="flex flex-wrap justify-center w-full h-auto gap-5 mt-2 lg:flex-nowrap">
                 {TierData.map((data, i) => (
                     <div
                         key={i}
-                        className={`transition-transform  mb-5  w-72 sm:w-80  duration-1000 transform ${
+                        className={`transition-transform  mb-5  max-h-full  w-72 sm:w-80  duration-1000 transform ${
                             isVisible
                                 ? "translate-x-0 opacity-100"
                                 : "-translate-x-96 opacity-0" // Start with a small translate
