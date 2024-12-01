@@ -26,7 +26,7 @@ const TierCard = ({ data }) => {
     };
 
     return (
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center h-full ">
             {/* Card Header */}
             <div className="flex flex-col items-center justify-start p-3 pb-4 mb-3 bg-white rounded-lg shadow-custom h-36">
                 <h1 className="font-semibold text-center xl:text-lg text-primary">
@@ -40,7 +40,7 @@ const TierCard = ({ data }) => {
                 </p>
             </div>
             {/* Card Description */}
-            <div className="flex flex-col items-start justify-center w-full p-3 pb-4 bg-white bg-opacity-100 rounded-lg shadow-custom">
+            <div className="flex flex-col items-start justify-start w-full h-full p-3 pb-4 bg-white bg-opacity-100 rounded-lg shadow-custom">
                 {data.description.map((desc, idx) => (
                     <div key={idx} className="mb-2">
                         {/* Module Title */}

@@ -6,6 +6,7 @@ import { MdOutlineStars } from "react-icons/md";
 import Exclusive from "@/Components/Register/Exclusive";
 import Tier from "@/Components/Register/Tier";
 import Terms from "@/Components/Register/Terms";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
@@ -41,7 +42,11 @@ const Register = () => {
                 </p>
             </div>
             <Tier />
-            <Terms />
+            <Link to="/terms">
+                <h1 className="w-full mt-10 font-sans text-base font-semibold text-center text-primary">
+                    Terms and Conditions*
+                </h1>
+            </Link>
         </div>
     );
 };

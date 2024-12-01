@@ -4,20 +4,28 @@ import LoadingSpinner from "../utils/LoadingSpinner"; // Import the custom spinn
 
 // Lazy load the components
 const Home = lazy(() => import("../Pages/Home/Home"));
-const Contact = lazy(() => import("../pages/Contact/Contact"));
-const Register = lazy(() => import("../pages/Register/Register"));
-const Features = lazy(() => import("../pages/features/Features"));
+const Contact = lazy(() => import("../Pages/Contact/Contact"));
+const Register = lazy(() => import("../Pages/Register/Register"));
+const Features = lazy(() => import("../Pages/Features/Features"));
 const Product = lazy(() => import("../Pages/Product/Product"));
-const NotFound = lazy(() => import("../Pages/Notfound/Notfound")); // Lazy load the NotFound page
+const NotFound = lazy(() => import("../Pages/NotFound/NotFound"));
+const Terms = lazy(() => import("../Pages/Terms/Terms_Condition"));
+
+// Lazy load FormPage
+const FormPage = lazy(() => import("@components/Form/FormPage"));
+const Privacy = lazy(() => import("@components/privacy/Privacy"));
 
 const RoutesConfig = () => (
     <Suspense fallback={<LoadingSpinner />}>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/Features/:name/:id" element={<Features />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/features/:name/:id" element={<Features />} />
             <Route path="/product/:id" element={<Product />} />
+            <Route path="/form/:name" element={<FormPage />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
             {/* Catch-all route for undefined paths */}
             <Route path="*" element={<NotFound />} />
         </Routes>

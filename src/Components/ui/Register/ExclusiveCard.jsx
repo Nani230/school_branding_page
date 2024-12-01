@@ -1,6 +1,6 @@
 import React from "react";
 import { MdCheckBox, MdClose } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 const ExclusiveCard = ({ data }) => {
     return (
         <div className="flex flex-col justify-between h-[550px] w-[350px] sm:w-[500px] lg:w-[450px] xl:w-[500px] gap-4 px-6 py-4 bg-white border-2 rounded-lg border-secondary">
@@ -56,7 +56,8 @@ const ExclusiveCard = ({ data }) => {
             </div>
 
             <div className="flex items-center justify-center mt-4">
-                <button
+                <Link
+                    to={`/form/${null}`} //
                     className={`bg-[#DBEAFE] px-10 py-2 text-sm cursor-pointer ${
                         data.button === "Choose plan"
                             ? "font-inter font-semibold bg-transparent border-2 rounded-2xl text-primary border-primary"
@@ -64,7 +65,7 @@ const ExclusiveCard = ({ data }) => {
                     }`}
                 >
                     {data.button}
-                </button>
+                </Link>
             </div>
         </div>
     );

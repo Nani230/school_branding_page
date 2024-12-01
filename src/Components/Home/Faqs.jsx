@@ -1,7 +1,7 @@
 // Faqs.js
 import React from "react";
 import FaqsCard from "../ui/Home/FaqsCard";
-import Faqsdata from "@/data/Faqsdata";
+import Faqsdata from "@data/Faqs/Faqsdata";
 import image from "@assets/FaqsBackground.png";
 import AnimatedSection from "@animation/AnimatedSection";
 

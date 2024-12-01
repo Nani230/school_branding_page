@@ -61,7 +61,6 @@ const Navbar = () => {
             }
         );
         sections.forEach((section) => {
-            console.log(section);
             observerRef.current.observe(section);
         });
 

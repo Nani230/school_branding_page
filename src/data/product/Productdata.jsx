@@ -49,32 +49,28 @@ const data = [
         goal: "The goal of the project is to provide a reliable and efficient attendance solution that can be easily deployed in various environments like schools, offices, or other institutions, ensuring accurate tracking and security.",
         features: [
             {
-                title: "Face Recognition",
-                des: "Using advanced machine learning algorithms, the system will automatically recognize individuals based on their facial features for attendance marking.",
+                title: "App-Based Control",
+                des: "Manage power usage remotely with intuitive app-based controls, enabling users to monitor and adjust energy settings effortlessly.",
             },
             {
-                title: "Fingerprint Scanning",
-                des: "Integration of fingerprint scanners to provide an additional layer of security for attendance verification.",
+                title: "Real-Time Alerts",
+                des: "Receive immediate notifications for irregularities in power consumption or potential issues to ensure timely action and energy efficiency.",
             },
             {
-                title: "RFID Technology",
-                des: "RFID cards or tags will be used to quickly and efficiently identify individuals and mark attendance.",
+                title: "Seamless Energy Monitoring",
+                des: "An integrated platform providing real-time insights into energy usage for enhanced convenience and control in residential or small-scale commercial settings.",
             },
             {
-                title: "Custom PCBs",
-                des: "We will design and develop custom PCBs to integrate and control the various sensors and ensure smooth communication between them.",
+                title: "Balanced Energy Management",
+                des: "Ensures stability and efficient distribution across three phases, ideal for industrial or larger commercial facilities.",
             },
             {
-                title: "Sensor Integration",
-                des: "The system will include multiple sensors (camera, fingerprint, RFID) that work together for accurate data collection.",
+                title: "Mobile-Based Monitoring",
+                des: "View consumption data and receive real-time alerts on mobile devices, enabling proactive energy management across complex environments.",
             },
             {
-                title: "Software",
-                des: "A backend system will process the data from these sensors, manage attendance logs, and provide reports.",
-            },
-            {
-                title: "Design and Development",
-                des: " We will design the hardware and software to work seamlessly, ensuring that the system is user-friendly, scalable, and secure",
+                title: "Optimal Power Efficiency",
+                des: "A robust solution designed to help users achieve reliable and efficient energy distribution tailored to residential and industrial needs.",
             },
         ],
     },
@@ -87,32 +83,28 @@ const data = [
         goal: "The goal of the project is to provide a reliable and efficient attendance solution that can be easily deployed in various environments like schools, offices, or other institutions, ensuring accurate tracking and security.",
         features: [
             {
-                title: "Face Recognition",
-                des: "Using advanced machine learning algorithms, the system will automatically recognize individuals based on their facial features for attendance marking.",
+                title: "App-Based Control",
+                des: "Manage power usage remotely with intuitive app-based controls, enabling users to monitor and adjust energy settings effortlessly.",
             },
             {
-                title: "Fingerprint Scanning",
-                des: "Integration of fingerprint scanners to provide an additional layer of security for attendance verification.",
+                title: "Real-Time Alerts",
+                des: "Receive immediate notifications for irregularities in power consumption or potential issues to ensure timely action and energy efficiency.",
             },
             {
-                title: "RFID Technology",
-                des: "RFID cards or tags will be used to quickly and efficiently identify individuals and mark attendance.",
+                title: "Seamless Energy Monitoring",
+                des: "An integrated platform providing real-time insights into energy usage for enhanced convenience and control in residential or small-scale commercial settings.",
             },
             {
-                title: "Custom PCBs",
-                des: "We will design and develop custom PCBs to integrate and control the various sensors and ensure smooth communication between them.",
+                title: "Balanced Energy Management",
+                des: "Ensures stability and efficient distribution across three phases, ideal for industrial or larger commercial facilities.",
             },
             {
-                title: "Sensor Integration",
-                des: "The system will include multiple sensors (camera, fingerprint, RFID) that work together for accurate data collection.",
+                title: "Mobile-Based Monitoring",
+                des: "View consumption data and receive real-time alerts on mobile devices, enabling proactive energy management across complex environments.",
             },
             {
-                title: "Software",
-                des: "A backend system will process the data from these sensors, manage attendance logs, and provide reports.",
-            },
-            {
-                title: "Design and Development",
-                des: " We will design the hardware and software to work seamlessly, ensuring that the system is user-friendly, scalable, and secure",
+                title: "Optimal Power Efficiency",
+                des: "A robust solution designed to help users achieve reliable and efficient energy distribution tailored to residential and industrial needs.",
             },
         ],
     },
