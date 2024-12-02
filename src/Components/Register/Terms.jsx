@@ -5,7 +5,7 @@ import AnimatedSection from "@animation/AnimatedSection";
 
 const Terms = () => {
     return (
-        <div className="min-h-screen px-10 mt-10 lg:pt-10 md:px-20 lg:px-32">
+        <div className="min-h-screen px-10 mt-10 responsive-section lg:pt-10 md:px-20 lg:px-32">
             <h1 className="mb-6 font-sans text-xl font-bold text-center sm:text-3xl text-primary">
                 Terms and Conditions
             </h1>
