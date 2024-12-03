@@ -21,9 +21,10 @@ const Footer = () => {
         {
             text: "VisionariesAI Labs",
             link: "https://visionariesai.com/index.html",
-        }, // Add link to "About" or any other page
-        { text: "Privacy Policy", link: "/privacy" }, // Link to privacy policy page
-        { text: "Terms & Conditions", link: "/terms" }, // Link to terms page
+            external: true, // Add this property to identify external links
+        },
+        { text: "Privacy Policy", link: "/privacy", external: false },
+        { text: "Terms & Conditions", link: "/terms", external: false },
     ];
 
     const servicesInfo = [
@@ -78,7 +79,24 @@ const Footer = () => {
                             key={idx}
                             className="font-sans text-base font-normal list-none cursor-pointer"
                         >
-                            <Link to={info.link}>{info.text}</Link>
+                            {/* Conditionally apply target="_blank" for external links */}
+                            {info.external ? (
+                                <a
+                                    href={info.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:underline"
+                                >
+                                    {info.text}
+                                </a>
+                            ) : (
+                                <Link
+                                    to={info.link}
+                                    className="text-white hover:underline"
+                                >
+                                    {info.text}
+                                </Link>
+                            )}
                         </li>
                     ))}
                     <hr className="md:hidden border border-[#03A7A11F]" />
@@ -94,9 +112,14 @@ const Footer = () => {
                             className="font-sans text-base font-normal list-none cursor-pointer"
                         >
                             {idx + 1 === 4 ? (
-                                <Link to="/">{info.text}</Link>
+                                <Link className="hover:underline" to="/">
+                                    {info.text}
+                                </Link>
                             ) : (
-                                <Link to={`/product/${idx + 1}`}>
+                                <Link
+                                    className="hover:underline"
+                                    to={`/product/${idx + 1}`}
+                                >
                                     {info.text}
                                 </Link>
                             )}

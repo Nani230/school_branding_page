@@ -13,6 +13,25 @@
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE 10+ */
     }
+    @keyframes scaleUp {
+        0% {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 
     .animate-float {
         animation: float 3s ease-in-out infinite;

@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { send } from "emailjs-com";
 import Homebanner from "@assets/Home.png";
 import m_banner from "@assets/Home/m_banner.png";
 
@@ -52,6 +53,10 @@ function FloatingLabelInput({
 }
 
 const ContactForm = () => {
+    const serviceID = "service_tvtk2xr";
+    const templateID = "template_joe8237";
+    const PUBLIC_KEY = "9R9VMnwYtqehumZjw";
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -62,6 +67,7 @@ const ContactForm = () => {
 
     const [errors, setErrors] = useState({});
     const [visible, setVisible] = useState(false);
+    const [showThankYouPopup, setShowThankYouPopup] = useState(false); // Popup visibility state
     const formRef = useRef(null);
 
     const fields = [
@@ -95,11 +101,36 @@ const ContactForm = () => {
         e.preventDefault();
         const formErrors = validateForm();
         if (Object.keys(formErrors).length === 0) {
-            console.log("User input data:", formData);
-            // Handle successful form submission
+            // Send email using EmailJS
+            send(serviceID, templateID, formData, PUBLIC_KEY)
+                .then((response) => {
+                    console.log("Email sent successfully:", response);
+                    setFormData({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        organization: "",
+                        message: "",
+                    }); // Clear form after successful submission
+
+                    // Show the thank you popup with transition
+                    setShowThankYouPopup(true);
+
+                    // Hide the popup after 3 seconds
+                    setTimeout(() => {
+                        setShowThankYouPopup(false);
+                    }, 3000);
+                })
+                .catch((error) => {
+                    console.error("Error sending email:", error);
+                });
         } else {
             setErrors(formErrors);
         }
+    };
+
+    const closePopup = () => {
+        setShowThankYouPopup(false); // Close the popup manually
     };
 
     useEffect(() => {
@@ -202,6 +233,33 @@ const ContactForm = () => {
                     </div>
                 </form>
             </div>
+
+            {/* Thank You Popup with Transition After Submit */}
+            {showThankYouPopup && (
+                <div
+                    className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full transition-opacity duration-500 bg-black bg-opacity-50 opacity-100"
+                    style={{ animation: "fadeIn 0.5s" }}
+                >
+                    <div
+                        className="relative p-6 transition-all w-[300px] sm:w-auto duration-500 transform bg-white rounded-lg shadow-lg "
+                        style={{ animation: "scaleUp 0.5s" }}
+                    >
+                        <button
+                            onClick={closePopup}
+                            className="absolute text-xl text-gray-600 top-2 right-2"
+                        >
+                            &times;
+                        </button>
+                        <h3 className="font-sans text-xl font-bold text-primary">
+                            Thank you for your submission!
+                        </h3>
+                        <p className="font-sans">
+                            Your message has been sent successfully. We will get
+                            back to you shortly.
+                        </p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
