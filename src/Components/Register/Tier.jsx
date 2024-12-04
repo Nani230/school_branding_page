@@ -49,7 +49,7 @@ const Tier = () => {
                 Features for Each Tier
             </h1>
 
-            <div className="flex flex-wrap justify-center mb-3 w-full h-[1068px] gap-5 mt-2 lg:flex-nowrap">
+            <div className="flex flex-wrap justify-center w-full gap-5 mt-2 mb-3 lg:flex-nowrap">
                 {TierData.map((data, i) => (
                     <div
                         key={i}

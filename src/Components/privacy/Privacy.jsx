@@ -7,7 +7,7 @@ import Privacydata from "@data/privacy/Privacydata";
 
 const Privacy = () => {
     return (
-        <div className="min-h-screen px-10 pt-10 responsive-section md:px-20 lg:px-32">
+        <div className="min-h-screen px-5 pt-10 sm:px-10 responsive-section md:px-20 lg:px-32">
             <h1 className="mb-6 font-sans text-xl font-bold text-center sm:text-3xl text-primary">
                 Privacy Policy for VisionicX Products
             </h1>

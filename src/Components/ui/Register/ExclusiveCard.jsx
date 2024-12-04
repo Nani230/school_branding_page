@@ -3,7 +3,7 @@ import { MdCheckBox, MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 const ExclusiveCard = ({ data }) => {
     return (
-        <div className="flex flex-col justify-between h-[550px] w-[350px] sm:w-[500px] lg:w-[450px] xl:w-[500px] gap-4 px-6 py-4 bg-white border-2 rounded-lg border-secondary">
+        <div className="flex flex-col justify-between h-[550px] w-[300px] sm:w-[500px] lg:w-[450px] xl:w-[500px] gap-4 px-6 py-4 bg-white border-2 rounded-lg border-secondary">
             <h1 className="text-sm font-semibold sm:text-xl text-primary">
                 {data.title}
                 <span className="ml-3 text-sm lg:text-base font-extralight">

@@ -26,7 +26,7 @@ const TierCard = ({ data }) => {
     };
 
     return (
-        <div className="flex flex-col items-center h-full ">
+        <div className="flex flex-col h-[1068px]  items-center  ">
             {/* Card Header */}
             <div className="flex flex-col items-center justify-start p-3 pb-4 mb-3 bg-white rounded-lg shadow-custom h-36">
                 <h1 className="font-semibold text-center xl:text-lg text-primary">

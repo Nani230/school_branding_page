@@ -11,7 +11,7 @@ const Faqs = () => {
             id="faq"
             className="relative flex justify-center p-5 mt-48 bg-no-repeat bg-contain responsive-section h-max pt-9"
         >
-            <pre className="absolute top-0 font-mono text-lg whitespace-pre-wrap -z-10">
+            <pre className="absolute top-0 hidden font-mono text-lg whitespace-pre-wrap md:block -z-10">
                 <code>
                     <img src={image} alt="" />
                 </code>

@@ -12,7 +12,7 @@ const FaqsCard = ({ data, i }) => {
 
     return (
         <div
-            className={`w-full m-2 p-4  rounded-lg transition-all duration-500 ease-in-out ${
+            className={`w-[95%] lg:w-full m-2 p-4  rounded-lg transition-all duration-500 ease-in-out ${
                 isOpen ? "bg-white shadow-lg" : "bg-primary"
             } hover:shadow-md`}
         >
