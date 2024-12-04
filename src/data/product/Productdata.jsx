@@ -1,5 +1,9 @@
 import mod from "@assets/product/mod.png";
 import sidemod from "@assets/product/sidemod.png";
+import single from "@assets/product/single.png";
+import sidesingle from "@assets/product/sidesingle.png";
+import three from "@assets/product/three.png";
+import sidethree from "@assets/product/sidethree.png";
 
 const data = [
     {
@@ -44,8 +48,8 @@ const data = [
         id: 2,
         title: "Single-Phase Energy Monitoring System",
         des: "Our single-phase energy monitoring system is designed for efficient control and management of energy in residential or small-scale commercial settings. Equipped with app-based control, it allows users to manage power usage remotely through intuitive switches and settings. The system sends real-time alerts, notifying users of any irregularities in power consumption or potential issues, ensuring optimal energy use and timely action. This solution provides an all-in-one platform for seamless energy monitoring and control, enhancing both convenience and energy efficiency.",
-        img: mod,
-        bannerimg: sidemod,
+        img: single,
+        bannerimg: sidesingle,
         goal: "The goal of the project is to provide a reliable and efficient attendance solution that can be easily deployed in various environments like schools, offices, or other institutions, ensuring accurate tracking and security.",
         features: [
             {
@@ -78,8 +82,8 @@ const data = [
         id: 3,
         title: "Three-Phase Energy Monitoring System ",
         des: "Our three-phase energy monitoring system offers comprehensive control and monitoring capabilities for industrial or larger commercial facilities, where balanced energy management is critical. Through mobile-based control, users can remotely monitor and adjust energy settings, ensuring stability and efficient distribution across three phases. The system supports real-time monitoring, allowing users to view consumption data and receive alerts on mobile devices. This robust solution is ideal for large-scale energy management, enabling users to achieve optimal power efficiency and reliability across complex environments.",
-        img: mod,
-        bannerimg: sidemod,
+        img: three,
+        bannerimg: sidethree,
         goal: "The goal of the project is to provide a reliable and efficient attendance solution that can be easily deployed in various environments like schools, offices, or other institutions, ensuring accurate tracking and security.",
         features: [
             {
