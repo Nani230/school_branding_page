@@ -21,8 +21,8 @@ const RoutesConfig = () => (
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/features/:name/:id" element={<Features />} />
-            <Route path="/product/:id" element={<Product />} />
+            <Route exact path="/features/:name/:id" element={<Features />} />
+            <Route exact path="/product/:id" element={<Product />} />
             <Route path="/form/:name" element={<FormPage />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />

@@ -1,10 +1,10 @@
 const Exclusivedata = [
     {
         title: "Exclusive",
-        subtitle: "Offer - Register Before November 30th",
+        subtitle: "Offer - Register Before December 2024",
         offer: "100%Off ",
-        duration: "  6 Month",
-        desc: "Pay only the registration fee, and get 6 months free access. Free Setup and Integration: Let our team handle the entire setup, ensuring zero hassle for you",
+        duration: "  5 Months",
+        desc: "Pay only the registration fee, and get 5 Monthss free access. Free Setup and Integration: Let our team handle the entire setup, ensuring zero hassle for you",
         para: [
             " Free Setup and Integration",
 
@@ -23,13 +23,13 @@ const Exclusivedata = [
     },
     {
         title: "Regular",
-        subtitle: "Pricing (After November 30th)",
+        subtitle: "Pricing (After December 2024)",
         offer: "Full Cost ",
-        duration: "  6 Month",
+        duration: "  5 Months",
         desc: "No discounts; pay the regular subscription rate for all features.",
 
         para: [
-            "Full Cost for 6 Months",
+            "Full Cost for 5 Monthss",
             "All-In-One School Management",
             "Customizable Dashboard",
             "Registration and complete fee applies",

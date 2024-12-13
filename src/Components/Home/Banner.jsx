@@ -20,7 +20,7 @@ const data = [
     },
     {
         head: "Exclusive Offer for Schools and colleges – Save on Our Education Management System!",
-        para: `Get up to 100% Off, Offer Valid Till November 30th.
+        para: `Get up to 100% Off, Offer Valid Till December 2024.
         
         Limited Time Discounts – Register Early and Unlock Huge Savings!`,
         img: sliderimg3,
