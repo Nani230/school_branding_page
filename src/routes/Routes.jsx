@@ -8,7 +8,7 @@ const Contact = lazy(() => import("../Pages/Contact/Contact"));
 const Register = lazy(() => import("../Pages/Register/Register"));
 const Features = lazy(() => import("../Pages/features/Features"));
 const Product = lazy(() => import("../Pages/Product/Product"));
-const NotFound = lazy(() => import("../Pages/NotFound/NotFound"));
+const NotFound = lazy(() => import("../Pages/Notfound/NotFound"));
 const Terms = lazy(() => import("../Pages/Terms/Terms_Condition"));
 
 // Lazy load FormPage
