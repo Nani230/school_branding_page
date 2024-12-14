@@ -159,9 +159,9 @@ const Privacydata = [
             {
                 title: "VisionariesAI Labs Pvt Ltd",
                 details: [
-                    "Email: [Insert Contact Email]",
+                    "Email: contact@visionariesai.com",
                     "Phone: [Insert Contact Number]",
-                    "Website: [Insert Website URL]",
+                    "Website: https://visionariesai.com/index.html",
                 ],
             },
         ],
