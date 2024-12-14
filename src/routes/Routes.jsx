@@ -6,7 +6,7 @@ import LoadingSpinner from "../utils/LoadingSpinner"; // Import the custom spinn
 const Home = lazy(() => import("../Pages/Home/Home"));
 const Contact = lazy(() => import("../Pages/Contact/Contact"));
 const Register = lazy(() => import("../Pages/Register/Register"));
-const Features = lazy(() => import("../Pages/Features/Features"));
+const Features = lazy(() => import("../Pages/features/Features"));
 const Product = lazy(() => import("../Pages/Product/Product"));
 const NotFound = lazy(() => import("../Pages/NotFound/NotFound"));
 const Terms = lazy(() => import("../Pages/Terms/Terms_Condition"));
