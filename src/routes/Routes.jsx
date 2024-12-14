@@ -12,8 +12,8 @@ const NotFound = lazy(() => import("../Pages/Notfound/NotFound"));
 const Terms = lazy(() => import("../Pages/Terms/Terms_Condition"));
 
 // Lazy load FormPage
-const FormPage = lazy(() => import("@components/Form/FormPage"));
-const Privacy = lazy(() => import("@components/privacy/Privacy"));
+const FormPage = lazy(() => import("../Components/Form/FormPage"));
+const Privacy = lazy(() => import("../Components/privacy/Privacy"));
 
 const RoutesConfig = () => (
     <Suspense fallback={<LoadingSpinner />}>
