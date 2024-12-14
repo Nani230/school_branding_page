@@ -1,1 +1,0 @@
-import{j as e}from"./index-YktDhaLf.js";const a=({Source:s,className:t,...o})=>{const r="text-white";return s?e.jsx(s,{...o,className:`${r} ${t||""}`.trim()}):(console.error("Icon: Missing Source prop."),null)},l="/assets/lap-B1-kHc81.png";export{a as I,l};
